@@ -4,6 +4,7 @@
 var SlotGameViewMediator=AbstractSlotComponentMediator.extend({
     _view:null,
     _slotDataProxy:SlotDataProxy,
+    _slotStatesProxy:SlotStatesProxy,
     ctor:function(viewComponent)
     {
         this._super(ComponentTypes.MAIN_VIEW,viewComponent);
@@ -22,7 +23,8 @@ var SlotGameViewMediator=AbstractSlotComponentMediator.extend({
     onRegister:function()
     {
         this._slotDataProxy = this.facade.retrieveProxy(SlotDataProxy.NAME);
-        cc.log("VIEW IS:"+this._view);
+        this._slotStatesProxy=this.facade.retrieveProxy(SlotStatesProxy.NAME);
+        //cc.log("VIEW IS:"+this._view);
         this.facade.registerMediator(new ControlBarLayerMediator(ComponentTypes.CONTROL_BAR,this._view.controlBar));
     },
 

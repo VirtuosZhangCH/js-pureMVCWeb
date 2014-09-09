@@ -30,9 +30,9 @@ var SlotStatesProxy  = Proxy.extend({
     setCurrentState:function(value)
     {
         if(this._currentState != value){
-            this._currentState && (this._previousState = _currentState);
+            this._currentState && (this._previousState =this._currentState);
             this._currentState = value;
-            this.sendNotification(NotesApplication.SLOT_GAME_STATE_CHANGED,_currentState);
+            this.sendNotification(NotesApplication.SLOT_GAME_STATE_CHANGED,value);
             cc.log("<<---- Game state changed into:"+this._currentState.toString()+" ----->>");
         }
     },
@@ -45,6 +45,11 @@ var SlotStatesProxy  = Proxy.extend({
         {
             Facade.getInstance(this.multitonKey).sendNotification($notificationName, $body, $type);
         }
+    },
+
+    onRemove:function()
+    {
+        //TODO remove
     }
 
 })

@@ -1,19 +1,22 @@
 /**
+ * Created by zhangchi on 2014/9/9.
+ */
+/**
  * Created by zhangchi on 2014/9/5.
  */
-var ControlBarLayerMediator=AbstractSlotComponentMediator.extend({
+var SymbolLayerMediator=AbstractSlotComponentMediator.extend({
     _view:null,
     _slotDataProxy:null,
+    _slotStatesProxy:null,
     ctor:function(name,viewComponent)
     {
         this._super(name,viewComponent);
         this._view=viewComponent;
 
-        cc.log("MediatorName:",this.mediatorName);
         //cc.defineGetterSetter(this,"mediatorName",this.getMediatorName);
     },
 
-   /* getMediatorName:function()
+    /*getMediatorName:function()
     {
         return this.mediatorName;
     },*/
@@ -21,16 +24,19 @@ var ControlBarLayerMediator=AbstractSlotComponentMediator.extend({
     onRegister:function()
     {
         this._slotDataProxy = this.facade.retrieveProxy(SlotDataProxy.NAME);
-        this._view.sigOnClick.add(this.onSpin,this);
+        this._slotStatesProxy = this.facade.retrieveProxy(SlotStatesProxy.NAME);
+        this._view.sigClick.add(this.onViewClick,this);
     },
 
-    onSpin:function()
+    onViewClick:function()
     {
         cc.log("SPIN!!!!!!");
-        cc.log(this._slotDataProxy.isSpinFree=true);
+        cc.log(this._slotDataProxy.isSpinFree);
         //TODO sendNotifications
-        this.sendNotification("test",123);
-       // this._slotDataProxy.isAutoSpin=true;
+        //if is a bonus win skip
+        //else change states to
+        //this.sendNotification("test",123);
+        // this._slotDataProxy.isAutoSpin=true;
     },
 
     sendNotification:function($notificationName,$body, $type)

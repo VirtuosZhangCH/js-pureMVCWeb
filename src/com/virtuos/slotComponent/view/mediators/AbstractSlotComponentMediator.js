@@ -8,9 +8,11 @@ var AbstractSlotComponentMediator  = Mediator.extend
     {
         this._super(mediatorName,viewComponent);
         this._viewComponent=viewComponent;
+
+       // cc.defineGetterSetter(this,"mediatorName",this.getMediatorName);
     },
 
-    /*getMediatorName:function()
+   /* getMediatorName:function()
     {
         return this.mediatorName;
     },*/

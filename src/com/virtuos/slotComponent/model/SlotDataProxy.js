@@ -26,7 +26,12 @@ var SlotDataProxy  = Proxy.extend({
     setIsSpinFree:function(value)
     {
         this._isAutoSpin = value;
-        this.sendNotification("test2");
+        //this.sendNotification("test2");
+    },
+
+    onRemove:function()
+    {
+        //TODO remove
     }
 })
 

@@ -2,7 +2,7 @@
  * Created by zhangchi on 2014/9/3.
  */
 var Mediator  = Notifier.extend({
-    mediatorName:null,
+    _mediatorName:null,
     viewComponent:null,
     notificationMap:null,
 
@@ -14,14 +14,17 @@ var Mediator  = Notifier.extend({
             throw "Need a mediatorName please ToBe optimized";
         }
         this.notificationMap = new NotificationMap();
-        this.mediatorName = $mediatorName != null ? ($mediatorName) : ("Mediator");
+        this._mediatorName = $mediatorName != null ? ($mediatorName) : ("Mediator");
         this.viewComponent = $viewComponent;
         this.mapNotifications();
+
+        cc.defineGetterSetter(this,"mediatorName",this.getMediatorName);
     },
 
     getMediatorName:function()
     {
-        return this.mediatorName;
+
+        return this._mediatorName;
     },
 
     setViewComponent:function(viewComponent)
@@ -63,6 +66,5 @@ var Mediator  = Notifier.extend({
         this.multitonKey = $key;
         //this._super();
     }
-
 
 })

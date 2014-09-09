@@ -89,12 +89,14 @@ var View  = cc.Class.extend({
     {
         var _loc_3 = null;
         var _loc_4
-        if (this.mediatorMap[mediator.getMediatorName()] != null)
+        //if (this.mediatorMap[mediator.getMediatorName()] != null)
+        if (this.mediatorMap[mediator.mediatorName] != null)
         {
             return;
         }
         mediator.initializeNotifier(this.multitonKey);
-        this.mediatorMap[mediator.getMediatorName()] = mediator;
+        //this.mediatorMap[mediator.getMediatorName()] = mediator;
+        this.mediatorMap[mediator.mediatorName] = mediator;
         var _loc_2 = mediator.listNotificationInterests();
         if (_loc_2.length > 0)
         {
@@ -107,7 +109,7 @@ var View  = cc.Class.extend({
                 _loc_4 = _loc_4 + 1;
             }
         }
-        cc.log("MDENAME::"+mediator.getMediatorName());
+        //cc.log("MDENAME::"+mediator.mediatorName);
         mediator.onRegister();
     },
 

@@ -1,12 +1,13 @@
 /**
  * Created by zhangchi on 2014/9/5.
  */
-var testControlBarLayer=cc.Layer.extend({
+var testControlBarLayer=cc.Sprite.extend({
     testBt:null,
     sigOnClick:new Signal(),
     ctor:function()
     {
-        this._super();
+        //this._super();
+        cc.Sprite.prototype.ctor.call(this);
         var closeItem = new cc.MenuItemImage(
             res.CloseNormal_png,
             res.CloseSelected_png,

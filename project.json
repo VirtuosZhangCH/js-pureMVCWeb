@@ -30,6 +30,7 @@
 
         "src/com/virtuos/slotComponent/application/slotFacade.js",
         "src/com/virtuos/slotComponent/model/slotDataProxy.js",
+        "src/com/virtuos/slotComponent/model/slotStatesProxy.js",
 
         "src/com/virtuos/slotComponent/view/mediators/AbstractSlotComponentMediator.js",
         "src/concreteSlot/view/mediators/SlotGameViewMediator.js",

@@ -8,12 +8,14 @@ var ControlBarLayerMediator=AbstractSlotComponentMediator.extend({
     {
         this._super(name,viewComponent);
         this._view=viewComponent;
+
+        cc.defineGetterSetter(this,"mediatorName",this.getMediatorName);
     },
 
-    /*getMediatorName:function()
+    getMediatorName:function()
     {
         return this.mediatorName;
-    },*/
+    },
 
     onRegister:function()
     {

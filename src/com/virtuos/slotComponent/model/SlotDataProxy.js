@@ -14,21 +14,20 @@ var SlotDataProxy  = Proxy.extend({
         this._super(SlotDataProxy.NAME);
         this._betLines = 1;
         this._coinSize = 0;
+
+        cc.defineGetterSetter(this,"isSpinFree",this.getIsSpinFree,this.setIsSpinFree);
+    },
+
+    getIsSpinFree:function()
+    {
+        return this._freeSpinRemaining>0;
+    },
+
+    setIsSpinFree:function(value)
+    {
+        this._isAutoSpin = value;
+        this.sendNotification("test2");
     }
 })
 
 SlotDataProxy.NAME="SlotDataProxy";
-
-SlotDataProxy.prototype=
-{
-    //get isSpinFree()
-    //{
-       // return this._freeSpinRemaining>0;
-    //}
-
-    /*set isAutoSpin(value)
-    {
-        this._isAutoSpin = value;
-        this.sendNotification("test2");
-    }*/
-}

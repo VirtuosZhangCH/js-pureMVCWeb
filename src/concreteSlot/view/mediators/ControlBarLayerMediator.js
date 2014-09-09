@@ -24,6 +24,7 @@ var ControlBarLayerMediator=AbstractSlotComponentMediator.extend({
     onSpin:function()
     {
         cc.log("SPIN!!!!!!");
+        cc.log(this._slotDataProxy.isSpinFree=true);
         //TODO sendNotifications
         this.sendNotification("test",123);
        // this._slotDataProxy.isAutoSpin=true;

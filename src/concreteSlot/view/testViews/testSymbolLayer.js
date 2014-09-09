@@ -37,6 +37,8 @@ var testSymbolLayer=cc.Sprite.extend({
         this.testSymbol.play();
         this.testSymbol2.play();
         this.testSymbol3.play();
+
+        this.testSymbol2.opacity-=10;
     },
 
     init:function()

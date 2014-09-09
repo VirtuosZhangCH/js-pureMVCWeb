@@ -40,11 +40,12 @@
 		"src/concreteSlot/view/mediators/ControlBarLayerMediator.js",
         "src/concreteSlot/view/mediators/SymbolLayerMediator.js",
 
-        "src/com/virtuos/abstraction/scene/AbstractSlotScene.js",
+        "src/com/virtuos/abstraction/scene/AbstractScene.js",
         "src/com/virtuos/abstraction/view/AbstractSprite.js",
         "src/com/virtuos/abstraction/view/AbstractActSprite.js",
         "src/com/virtuos/abstraction/view/AbstractAnimation.js",
         "src/resource.js",
+
         "src/app.js"
     ]
 }

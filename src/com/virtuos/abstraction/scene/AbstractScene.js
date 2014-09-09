@@ -1,8 +1,7 @@
 /**
  * Created by zhangchi on 2014/9/1.
  */
-var slotGameState,slotGameMode;
-var AbstractSlotScene  = cc.Scene.extend({
+var AbstractScene  = cc.Scene.extend({
     _componentDic:null,
 
     onEnter:function () {

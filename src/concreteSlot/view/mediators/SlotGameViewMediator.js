@@ -26,12 +26,13 @@ var SlotGameViewMediator=AbstractSlotComponentMediator.extend({
         this._slotStatesProxy=this.facade.retrieveProxy(SlotStatesProxy.NAME);
         //cc.log("VIEW IS:"+this._view);
         this.facade.registerMediator(new ControlBarLayerMediator(ComponentTypes.CONTROL_BAR,this._view.controlBar));
+        this.facade.registerMediator(new SymbolLayerMediator(ComponentTypes.SYMBOLS_LAYER,this._view.symbolLayer));
     },
 
     onPointTest:function()
     {
         cc.log("OnPoint");
-        this._view.controlBar.visible=false;
+        //this._view.controlBar.visible=false;
     },
 
     handleTest:function(body,point)

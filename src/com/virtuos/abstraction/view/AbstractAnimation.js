@@ -37,6 +37,7 @@ var AbstractAnimation  = AbstractSprite.extend
             new cc.Sprite("#"+animationName+startIndex.toString()+".png"):
             new cc.Sprite("#"+animationName+"0"+startIndex.toString()+".png");
         //this.sprite.runAction(this.animation);
+        this.registGetSet();
     },
 
     play:function(reverse,callBack)

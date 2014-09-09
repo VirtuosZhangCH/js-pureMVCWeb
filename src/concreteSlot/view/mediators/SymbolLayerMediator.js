@@ -16,10 +16,15 @@ var SymbolLayerMediator=AbstractSlotComponentMediator.extend({
         //cc.defineGetterSetter(this,"mediatorName",this.getMediatorName);
     },
 
-    /*getMediatorName:function()
+    mapNotifications:function()
     {
-        return this.mediatorName;
-    },*/
+        this.notificationMap.add("test",this.handleTest,this);
+    },
+
+    handleTest:function(body,point)
+    {
+        point._view.play();
+    },
 
     onRegister:function()
     {
@@ -47,7 +52,6 @@ var SymbolLayerMediator=AbstractSlotComponentMediator.extend({
         {
             Facade.getInstance(this.multitonKey).sendNotification($notificationName, $body, $type);
         }
-        //this._super($notificationName,$body, $type);
 
     }
 

@@ -36,7 +36,9 @@
         "src/concreteSlot/view/mediators/SlotGameViewMediator.js",
 		
 		"src/concreteSlot/view/testViews/testControlBarLayer.js",
+        "src/concreteSlot/view/testViews/testSymbolLayer.js",
 		"src/concreteSlot/view/mediators/ControlBarLayerMediator.js",
+        "src/concreteSlot/view/mediators/SymbolLayerMediator.js",
 
         "src/com/virtuos/abstraction/scene/AbstractSlotScene.js",
         "src/com/virtuos/abstraction/view/AbstractSprite.js",

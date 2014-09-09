@@ -16,6 +16,12 @@ var HelloWorldLayer = cc.Layer.extend({
 
         this.controlBar=new testControlBarLayer();
         this.addChild(this.controlBar,5);
+
+        this.symbolLayer=new testSymbolLayer();
+        this.addChild(this.symbolLayer,1);
+
+        this.symbolLayer.x=250;
+        this.symbolLayer.y=350;
         /////////////////////////////
         // 2. add a menu item with "X" image, which is clicked to quit the program
         //    you may modify it.
@@ -66,7 +72,7 @@ var HelloWorldLayer = cc.Layer.extend({
         // add "HelloWorld" splash screen"
         //var action = new cc.Spawn(cc.jumpBy(2, cc.p(300, 0), 50, 4), cc.rotateBy(2, 720));
         var action2=new cc.Sequence(cc.jumpBy(2, cc.p(300, 0), 50, 4), cc.rotateBy(2, 720))
-        var ss=new AbstractActSprite(new cc.Sprite(res.CloseSelected_png),action2);
+        var ss=new AbstractActSprite(res.CloseSelected_png,action2);
         this.addChild(ss.getStaticSprite());
         ss.setPosition(100,200);
         ss.playAction();

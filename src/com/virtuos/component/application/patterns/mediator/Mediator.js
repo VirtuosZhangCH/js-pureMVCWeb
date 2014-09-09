@@ -23,7 +23,6 @@ var Mediator  = Notifier.extend({
 
     getMediatorName:function()
     {
-
         return this._mediatorName;
     },
 

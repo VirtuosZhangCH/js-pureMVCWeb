@@ -12,12 +12,6 @@ var AbstractSlotComponentMediator  = Mediator.extend
        // cc.defineGetterSetter(this,"mediatorName",this.getMediatorName);
     },
 
-   /* getMediatorName:function()
-    {
-        return this.mediatorName;
-    },*/
-
-
     onRegister:function()
     {
 

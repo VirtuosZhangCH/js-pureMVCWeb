@@ -3,17 +3,16 @@
  */
 var AbstractActSprite  = AbstractSprite.extend({
     //what I need now is to check the parameter of the ctor
-    sprite:null,
+    //sprite:null,
     actions:null,
     //animation:null,
-    ctor:function(sprite,actions){
-        this.sprite=sprite
+    ctor:function(name,actions){
+        this.sprite =new cc.Sprite(name);
         this.actions=actions||null;
-        //this.animation=animation||null;
         if(this.actions)
             this.actions.retain();
-        //if(this.animation)
-            //this.animation.retain();
+
+        this.registGetSet();
     },
 
     stopAllActions:function()

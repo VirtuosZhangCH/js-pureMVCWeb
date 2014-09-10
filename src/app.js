@@ -107,7 +107,7 @@ var HelloWorldScene = cc.Scene.extend({
 
         //start MVC here
         var _facade = SlotFacade.getInstance();
-        _facade.startup(SlotDataProxy,layer,SlotGameViewMediator);
+        _facade.startup(SlotDataProxy,SlotStatesProxy,layer,SlotGameViewMediator);
 
 
     }

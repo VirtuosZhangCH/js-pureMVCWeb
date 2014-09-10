@@ -10,12 +10,12 @@ var Signal  = cc.Class.extend({
         },
         add:function($fun,$point)
         {
-            this.func=$fun;
+            $point.func=$fun;
             this.point=$point;
         },
         dispatch:function($par)
         {
             $par=$par|null;
-            this.func.apply(this.point,[$par]);
+            this.point.func.apply(this.point,[$par]);
         }
 })

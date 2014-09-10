@@ -46,13 +46,7 @@ var SymbolLayerMediator=AbstractSlotComponentMediator.extend({
 
     sendNotification:function($notificationName,$body, $type)
     {
-        var $body=$body|null;
-        var $type=$type|null;
-        if(Facade.getInstance(this.multitonKey))
-        {
-            Facade.getInstance(this.multitonKey).sendNotification($notificationName, $body, $type);
-        }
-
+       this._super($notificationName,$body, $type);
     }
 
 })

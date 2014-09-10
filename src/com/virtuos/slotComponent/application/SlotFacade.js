@@ -9,15 +9,21 @@ var SlotFacade  = Facade.extend({
     *@mainViewMediator Class
     *
     * */
-    startup:function(definitionOfSlotDataProxy,mainView,mainViewMediator)
+    startup:function(definitionOfSlotDataProxy,definitionOfSlotStatesProxy,mainView,mainViewMediator)
     {
         //var slotDataProxy=new SlotDataProxy()
         var slotDataProxy = new definitionOfSlotDataProxy();
+        var slotStatesProxy = new definitionOfSlotStatesProxy();
         if(!slotDataProxy){
             throw new Error("definitionOfSlotDataProxy must be a descendent of SlotDataProxy");
             return;
         }
+        if(!slotStatesProxy){
+            throw new Error("definationOfSlotStatesProxy must be a descendent of SlotStatesProxy");
+            return;
+        }
         this.registerProxy(slotDataProxy);
+        this.registerProxy(slotStatesProxy);
         this.registerMediator(new mainViewMediator(mainView));
     }
 

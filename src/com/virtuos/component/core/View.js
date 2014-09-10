@@ -109,7 +109,6 @@ var View  = cc.Class.extend({
                 _loc_4 = _loc_4 + 1;
             }
         }
-        //cc.log("MDENAME::"+mediator.mediatorName);
         mediator.onRegister();
     },
 
@@ -142,7 +141,6 @@ var View  = cc.Class.extend({
             _loc_2.onRemove();
         }
     }
-
 
 })
 

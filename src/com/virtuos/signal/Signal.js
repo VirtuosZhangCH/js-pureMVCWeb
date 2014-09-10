@@ -13,6 +13,11 @@ var Signal  = cc.Class.extend({
             $point.func=$fun;
             this.point=$point;
         },
+        remove:function()
+        {
+            this.point.func=null;
+            this.point=null;
+        },
         dispatch:function($par)
         {
             $par=$par|null;

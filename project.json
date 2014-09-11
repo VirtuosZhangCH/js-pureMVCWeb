@@ -11,8 +11,7 @@
     "modules" : ["cocos2d"],
 
     "jsList" : [
-		"src/com/virtuos/slotComponent/application/ComponentTypes.js",
-	
+		"src/com/virtuos/slotComponent/application/ComponentTypes.js",	
         "src/com/virtuos/component/application/patterns/observer/Notification.js",
         "src/com/virtuos/component/application/patterns/observer/NotificationMap.js",
         "src/com/virtuos/component/application/patterns/observer/Notifier.js",
@@ -21,31 +20,24 @@
         "src/com/virtuos/component/application/patterns/mediator/Mediator.js",
         "src/com/virtuos/component/application/patterns/facade/Facade.js",
         "src/com/virtuos/component/application/patterns/proxy/Proxy.js",
-
         "src/com/virtuos/signal/Signal.js",
-
         "src/com/virtuos/component/core/Controller.js",
         "src/com/virtuos/component/core/Model.js",
         "src/com/virtuos/component/core/View.js",
-
-        "src/com/virtuos/slotComponent/application/slotFacade.js",
-        "src/com/virtuos/slotComponent/model/slotDataProxy.js",
-        "src/com/virtuos/slotComponent/model/slotStatesProxy.js",
-
+        "src/com/virtuos/slotComponent/application/SlotFacade.js",
+        "src/com/virtuos/slotComponent/model/SlotDataProxy.js",
+        "src/com/virtuos/slotComponent/model/SlotStatesProxy.js",
         "src/com/virtuos/slotComponent/view/mediators/AbstractSlotComponentMediator.js",
-        "src/concreteSlot/view/mediators/SlotGameViewMediator.js",
-		
+        "src/concreteSlot/view/mediators/SlotGameViewMediator.js",		
 		"src/concreteSlot/view/testViews/testControlBarLayer.js",
         "src/concreteSlot/view/testViews/testSymbolLayer.js",
 		"src/concreteSlot/view/mediators/ControlBarLayerMediator.js",
         "src/concreteSlot/view/mediators/SymbolLayerMediator.js",
-
         "src/com/virtuos/abstraction/scene/AbstractScene.js",
         "src/com/virtuos/abstraction/view/AbstractSprite.js",
         "src/com/virtuos/abstraction/view/AbstractActSprite.js",
         "src/com/virtuos/abstraction/view/AbstractAnimation.js",
         "src/resource.js",
-
         "src/app.js"
     ]
 }

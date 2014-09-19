@@ -6,21 +6,26 @@ var Signal  = cc.Class.extend({
         point:null,
         ctor:function()
         {
-
+            this.name="signal";
         },
         add:function($fun,$point)
         {
-            $point.func=$fun;
+            this.func=$fun;
             this.point=$point;
         },
         remove:function()
         {
-            this.point.func=null;
+            this.func=null;
             this.point=null;
         },
         dispatch:function($par)
         {
             $par=$par|null;
-            this.point.func.apply(this.point,[$par]);
+            this.func.apply(this.point,[$par]);
+        },
+        registBind:function()
+        {
+           this.point=this;
         }
+
 })

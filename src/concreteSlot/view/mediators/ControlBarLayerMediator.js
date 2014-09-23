@@ -20,8 +20,13 @@ var ControlBarLayerMediator=AbstractSlotComponentMediator.extend({
 
     onRegister:function()
     {
+        //var reg=this._view.sigOnClick.registBind.bind(this);
+        //reg();
         this._slotDataProxy = this.facade.retrieveProxy(SlotDataProxy.NAME);
-        this._view.sigOnClick.add(this.onSpin,this);
+        var addBind=this._view.sigOnClick.add.bind(this)
+        //this._view.sigOnClick.add(this.onSpin,this);
+        addBind(this.onSpin,this)
+
     },
 
     onSpin:function()

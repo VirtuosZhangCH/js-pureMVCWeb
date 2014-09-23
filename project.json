@@ -5,12 +5,13 @@
     "showFPS" : true,
     "frameRate" : 60,
     "id" : "gameCanvas",
-    "renderMode" : 0,
+    "renderMode" : 1,
     "engineDir":"frameworks/cocos2d-html5",
 
     "modules" : ["cocos2d"],
 
     "jsList" : [
+        "src/concreteSlot/scene/VirtuosLoadScene.js",
 		"src/com/virtuos/slotComponent/application/ComponentTypes.js",	
         "src/com/virtuos/component/application/patterns/observer/Notification.js",
         "src/com/virtuos/component/application/patterns/observer/NotificationMap.js",

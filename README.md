@@ -1,4 +1,0 @@
-js-pureMVC
-==========
-
-js-pureMVC

@@ -12,7 +12,7 @@ var HelloWorldLayer = cc.Layer.extend({
         //////////////////////////////
         // 1. super init first
         this._super();
-        this.testClassRef(AbstractAnimation);
+        //this.testClassRef(AbstractAnimation);
 
         this.controlBar=new testControlBarLayer();
         this.addChild(this.controlBar,5);
@@ -26,24 +26,9 @@ var HelloWorldLayer = cc.Layer.extend({
         // 2. add a menu item with "X" image, which is clicked to quit the program
         //    you may modify it.
         // ask the window size
-        var size = cc.winSize;
+       // var size = cc.winSize;
 
-        // add a "close" icon to exit the progress. it's an autorelease object
-        var closeItem = new cc.MenuItemImage(
-            res.CloseNormal_png,
-            res.CloseSelected_png,
-            function () {
-                ss.release();
-                cc.log("Menu is clicked!");
-            }, this);
-        closeItem.attr({
-            x: size.width - 20,
-            y: 20
-            //anchorX: 0.5,
-            //anchorY: 0.5
-        });
-
-        //test apply
+     /*   //test apply
         var func=function($obj,$otj)
         {
             cc.log("this is a test"+$obj+$otj);
@@ -51,18 +36,18 @@ var HelloWorldLayer = cc.Layer.extend({
 
         //Controller.getInstance("2");
 
-        func.apply(this,["ok","NO"]);
+        func.apply(this,["ok","NO"]);*/
 
-        var menu = new cc.Menu(closeItem);
+       /* var menu = new cc.Menu(closeItem);
         menu.x = 0;
         menu.y = 0;
-        this.addChild(menu, 1);
+        this.addChild(menu, 1);*/
 
         /////////////////////////////
         // 3. add your codes below...
         // add a label shows "Hello World"
         // create and initialize a label
-        var helloLabel = new cc.LabelTTF("Hello World", "Arial", 38);
+      /*  var helloLabel = new cc.LabelTTF("Hello World", "Arial", 38);
         // position the label on the center of the screen
         helloLabel.x = size.width / 2;
         helloLabel.y = 0;
@@ -84,23 +69,28 @@ var HelloWorldLayer = cc.Layer.extend({
         sa.play(true,function(){
             sa.setVisible(false);
             cc.log("Complete")
-        });
+        });*/
 
 
 
-        helloLabel.runAction(
+      /*  helloLabel.runAction(
             cc.spawn(
                 cc.moveBy(2.5, cc.p(0, size.height - 40)),
                 cc.tintTo(2.5,255,125,0)
             )
-        );
+        );*/
         return true;
     }
 });
 
 var HelloWorldScene = cc.Scene.extend({
     onEnter:function () {
-        cc.spriteFrameCache.addSpriteFrames(g_resources[4]);
+        cc.spriteFrameCache.addSpriteFrames(g_resources[1]);
+        cc.spriteFrameCache.addSpriteFrames(g_resources[3]);
+        cc.spriteFrameCache.addSpriteFrames(g_resources[5]);
+        cc.spriteFrameCache.addSpriteFrames(g_resources[7]);
+        cc.spriteFrameCache.addSpriteFrames(g_resources[9]);
+        cc.spriteFrameCache.addSpriteFrames(g_resources[11]);
         this._super();
         var layer = new HelloWorldLayer();
         this.addChild(layer);

@@ -23,9 +23,9 @@ var ControlBarLayerMediator=AbstractSlotComponentMediator.extend({
         //var reg=this._view.sigOnClick.registBind.bind(this);
         //reg();
         this._slotDataProxy = this.facade.retrieveProxy(SlotDataProxy.NAME);
-        var addBind=this._view.sigOnClick.add.bind(this)
-        //this._view.sigOnClick.add(this.onSpin,this);
-        addBind(this.onSpin,this)
+        //var addBind=this._view.sigOnClick.add.bind(this)
+        this._view.sigOnClick.add(this.onSpin,this);
+       // addBind(this.onSpin,this)
 
     },
 

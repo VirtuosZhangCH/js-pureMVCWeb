@@ -18,8 +18,6 @@ var testSymbolLayer=cc.Sprite.extend({
         this.testSymbol2=new AbstractAnimation("BWW_Pic2_00",1,60,.04)
         this.addChild(this.testSymbol2.getStaticSprite());
 
-        //this.testSymbol2.x=200;
-        //this.testSymbol2.y=350;
         this.testSymbol2.setPosition(300,0)
 
         this.testSymbol3=new AbstractAnimation("BWW_Pic3_00",1,60,.04)

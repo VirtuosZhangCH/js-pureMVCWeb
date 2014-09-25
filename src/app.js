@@ -11,6 +11,7 @@ var HelloWorldLayer = cc.Layer.extend({
     ctor:function () {
         //////////////////////////////
         // 1. super init first
+        var size=cc.director.getWinSize();
         this._super();
         //this.testClassRef(AbstractAnimation);
 
@@ -20,8 +21,8 @@ var HelloWorldLayer = cc.Layer.extend({
         this.symbolLayer=new testSymbolLayer();
         this.addChild(this.symbolLayer,1);
 
-        this.symbolLayer.x=250;
-        this.symbolLayer.y=350;
+        this.symbolLayer.x=size.width>>1;
+        this.symbolLayer.y=size.height>>1;
         /////////////////////////////
         // 2. add a menu item with "X" image, which is clicked to quit the program
         //    you may modify it.
@@ -91,6 +92,8 @@ var HelloWorldScene = cc.Scene.extend({
         cc.spriteFrameCache.addSpriteFrames(g_resources[7]);
         cc.spriteFrameCache.addSpriteFrames(g_resources[9]);
         cc.spriteFrameCache.addSpriteFrames(g_resources[11]);
+        cc.spriteFrameCache.addSpriteFrames(g_resources[13]);
+
         this._super();
         var layer = new HelloWorldLayer();
         this.addChild(layer);

@@ -90,26 +90,6 @@ var testControlBarLayer=cc.Sprite.extend({
         FreeSpinDisplay.setPosition(500,0);
         this._tf.setPosition(500,0);
 
-        //test button
-       /* var closeItem = new cc.MenuItemImage(
-            res.CloseNormal_png,
-            res.CloseSelected_png,
-            function () {
-                //ss.release();
-                this.sigOnClick.dispatch();
-                cc.log("Menu is clicked!");
-            }, this);
-        closeItem.attr({
-            x: 300,
-            y: 200
-            //anchorX: 0.5,
-            //anchorY: 0.5
-        });
-        var menu = new cc.Menu(closeItem);
-        menu.x = 0;
-        menu.y = 0;
-        this.addChild(menu);*/
-
     },
 
     onCallBack:function()

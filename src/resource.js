@@ -18,6 +18,9 @@ var res = {
     s_bonus:"res/bonus.png",
     s_bonusList:"res/bonus.plist",
 
+    s_blur:"res/blurSymbols.png",
+    s_blurList:"res/blurSymbols.plist",
+
     m_bonusBell:"res/SOUND/bonus_anticipation.mp3",
     m_bonusEnd:"res/SOUND/bonus_end.mp3",
     m_bonusIntr:"res/SOUND/bonus_intro.mp3",

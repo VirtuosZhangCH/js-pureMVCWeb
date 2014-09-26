@@ -25,7 +25,7 @@ var testSymbolLayer=cc.Sprite.extend({
         this.createClipper();
 
         this.testSymbol=new AbstractAnimation("BWW_Pic1_00",1,60,.04)
-        this.addChild(this.testSymbol.getStaticSprite());
+        //this.addChild(this.testSymbol.getStaticSprite());
 
         //this.testSymbol.x=200;
         //this.testSymbol.y=200;
@@ -33,12 +33,12 @@ var testSymbolLayer=cc.Sprite.extend({
         this.testSymbol.x=200;
         this.testSymbol.opacity=122;
         this.testSymbol2=new AbstractAnimation("BWW_Pic2_00",1,60,.04)
-        this.addChild(this.testSymbol2.getStaticSprite());
+        //this.addChild(this.testSymbol2.getStaticSprite());
 
         this.testSymbol2.setPosition(300,0)
 
         this.testSymbol3=new AbstractAnimation("BWW_Pic3_00",1,60,.04)
-        this.addChild(this.testSymbol3.getStaticSprite());
+        //this.addChild(this.testSymbol3.getStaticSprite());
 
         //this.testSymbol3.x=200;
         //this.testSymbol3.y=600;
@@ -50,8 +50,8 @@ var testSymbolLayer=cc.Sprite.extend({
         this.clipper=new cc.ClippingNode();
         this.clipper.tag="Reel Canvas";
 
-        this.clipper.width=400;
-        this.clipper.height=400;
+        this.clipper.width=1000;
+        this.clipper.height=610;
 
         this.clipper.anchorX = 0.5;
         this.clipper.anchorY = 0.5;
@@ -106,6 +106,13 @@ var testSymbolLayer=cc.Sprite.extend({
         this.testSymbol3.play();
 
         this.testSymbol2.opacity-=10;
+
+        this.schedule(this.playReel,1/24);
+    },
+
+    playReel:function()
+    {
+        this._animationController.enterFrameHandler();
     },
 
     init:function()

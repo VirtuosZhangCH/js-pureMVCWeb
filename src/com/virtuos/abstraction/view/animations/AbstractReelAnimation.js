@@ -10,7 +10,16 @@ var AbstractReelAnimation=cc.Class.extend({
     _sigReelStopping:new Signal(),
 
     _reelsPositionHitBottom:[],
+    _anticipationReels:[],
     _viewSymbolGrid:[],
+
+    _rollingSpeed:1,
+    _symbolHeight:132,
+    _numberSymbolsInReel:3,
+    _displayingStackLength:4,
+    _columnWidth:135,
+    _columnGap:27,
+
     ctor:function()
     {
 

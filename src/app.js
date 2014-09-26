@@ -16,10 +16,10 @@ var HelloWorldLayer = cc.Layer.extend({
         //this.testClassRef(AbstractAnimation);
 
         this.controlBar=new testControlBarLayer();
-        this.addChild(this.controlBar,5);
+        //this.addChild(this.controlBar,5);
 
         this.symbolLayer=new testSymbolLayer();
-        this.addChild(this.symbolLayer,1);
+        //this.addChild(this.symbolLayer,1);
 
         this.symbolLayer.x=size.width>>1;
         this.symbolLayer.y=size.height>>1;

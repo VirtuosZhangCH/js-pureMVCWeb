@@ -27,6 +27,7 @@
         "src/com/virtuos/component/core/View.js",
 		"src/com/virtuos/slotComponent/view/animations/AbstractReelAnimation.js",
 		"src/com/virtuos/slotComponent/view/animations/RollingTypeReelAnimation.js",
+        "src/com/virtuos/slotComponent/view/animations/data/RollingReelAnimationData.js",
         "src/com/virtuos/slotComponent/view/element/SymbolImage.js",
         "src/com/virtuos/slotComponent/application/SlotFacade.js",
         "src/com/virtuos/slotComponent/model/SlotDataProxy.js",

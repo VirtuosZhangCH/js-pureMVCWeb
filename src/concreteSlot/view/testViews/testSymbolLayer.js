@@ -24,25 +24,7 @@ var testSymbolLayer=cc.Sprite.extend({
         //clipper
         this.createChildren();
 
-        this.testSymbol=new AbstractAnimation("BWW_Pic1_00",1,60,.04)
-        //this.addChild(this.testSymbol.getStaticSprite());
 
-        //this.testSymbol.x=200;
-        //this.testSymbol.y=200;
-        this.testSymbol.setPosition(150,0)
-        this.testSymbol.x=200;
-        this.testSymbol.opacity=122;
-        this.testSymbol2=new AbstractAnimation("BWW_Pic2_00",1,60,.04)
-        //this.addChild(this.testSymbol2.getStaticSprite());
-
-        this.testSymbol2.setPosition(300,0)
-
-        this.testSymbol3=new AbstractAnimation("BWW_Pic3_00",1,60,.04)
-        //this.addChild(this.testSymbol3.getStaticSprite());
-
-        //this.testSymbol3.x=200;
-        //this.testSymbol3.y=600;
-        this.testSymbol3.setPosition(450,0)
     },
 
     createChildren:function()
@@ -106,13 +88,6 @@ var testSymbolLayer=cc.Sprite.extend({
 
     playReelAnimation:function()
     {
-        //this.testSymbol.getStaticSprite().setOpacity(122);
-        this.testSymbol.play();
-        this.testSymbol2.play();
-        this.testSymbol3.play();
-
-        this.testSymbol2.opacity-=10;
-
         this.schedule(this.playReel,1/24);
     },
 
@@ -159,6 +134,4 @@ var testSymbolLayer=cc.Sprite.extend({
         }
         return this._symbolGrid;
     }
-
-
 })

@@ -2,13 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5087226b-2311-4fed-9ded-a56b01ff37a8" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/virtuos/slotComponent/view/element/SymbolImage.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app.js" afterPath="$PROJECT_DIR$/src/app.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/virtuos/slotComponent/view/animations/data/RollingReelAnimationData.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/virtuos/slotComponent/view/animations/AbstractReelAnimation.js" afterPath="$PROJECT_DIR$/src/com/virtuos/slotComponent/view/animations/AbstractReelAnimation.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/virtuos/slotComponent/view/animations/RollingTypeReelAnimation.js" afterPath="$PROJECT_DIR$/src/com/virtuos/slotComponent/view/animations/RollingTypeReelAnimation.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project.json" afterPath="$PROJECT_DIR$/project.json" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/concreteSlot/view/testViews/testSymbolLayer.js" afterPath="$PROJECT_DIR$/src/concreteSlot/view/testViews/testSymbolLayer.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MOVED" beforePath="D:\HTML5projectr3.0\HTML5Slotr3.0\slotGame\ComponentSlight\src\com\virtuos\abstraction\view\animations\AbstractReelAnimation.js" afterPath="$PROJECT_DIR$/src/com/virtuos/slotComponent/view/animations/AbstractReelAnimation.js" />
-      <change type="MOVED" beforePath="D:\HTML5projectr3.0\HTML5Slotr3.0\slotGame\ComponentSlight\src\com\virtuos\abstraction\view\animations\RollingTypeReelAnimation.js" afterPath="$PROJECT_DIR$/src/com/virtuos/slotComponent/view/animations/RollingTypeReelAnimation.js" />
     </list>
     <ignored path="ComponentSlight.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -30,21 +29,11 @@
       <content type="file-editors">
         <state>
           <leaf>
-            <file leaf-file-name="resource.js" pinned="false" current="false" current-in-tab="false">
-              <entry file="file://$PROJECT_DIR$/src/resource.js">
-                <provider selected="true" editor-type-id="text-editor">
-                  <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="969">
-                    <caret line="30" column="60" selection-start-line="30" selection-start-column="60" selection-end-line="30" selection-end-column="61" />
-                    <folding />
-                  </state>
-                </provider>
-              </entry>
-            </file>
             <file leaf-file-name="project.json" pinned="false" current="false" current-in-tab="true">
               <entry file="file://$PROJECT_DIR$/project.json">
                 <provider selected="true" editor-type-id="text-editor">
-                  <state vertical-scroll-proportion="0.4974093" vertical-offset="320" max-vertical-offset="1102">
-                    <caret line="32" column="65" selection-start-line="32" selection-start-column="65" selection-end-line="32" selection-end-column="65" />
+                  <state vertical-scroll-proportion="0.33333334" vertical-offset="320" max-vertical-offset="1121">
+                    <caret line="27" column="64" selection-start-line="27" selection-start-column="64" selection-end-line="27" selection-end-column="64" />
                     <folding />
                   </state>
                 </provider>
@@ -64,9 +53,21 @@
       <file leaf-file-name="RollingTypeReelAnimation.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/virtuos/slotComponent/view/animations/RollingTypeReelAnimation.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-8.586206" vertical-offset="1556" max-vertical-offset="2128">
-              <caret line="95" column="59" selection-start-line="95" selection-start-column="57" selection-end-line="95" selection-end-column="59" />
+            <state vertical-scroll-proportion="-15.068966" vertical-offset="0" max-vertical-offset="2223">
+              <caret line="23" column="5" selection-start-line="23" selection-start-column="5" selection-end-line="23" selection-end-column="5" />
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="RollingReelAnimationData.js" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/com/virtuos/slotComponent/view/animations/data/RollingReelAnimationData.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.56677526" vertical-offset="89" max-vertical-offset="703">
+              <caret line="25" column="0" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
+              <folding>
+                <element signature="e#0#44#0" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -86,8 +87,8 @@
       <file leaf-file-name="AbstractReelAnimation.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/virtuos/slotComponent/view/animations/AbstractReelAnimation.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1045">
-              <caret line="3" column="25" selection-start-line="3" selection-start-column="4" selection-end-line="3" selection-end-column="25" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1368">
+              <caret line="3" column="0" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="43" />
               <folding>
                 <element signature="e#0#44#0" expanded="false" />
               </folding>
@@ -95,11 +96,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="testSymbolLayer.js" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="testSymbolLayer.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/concreteSlot/view/testViews/testSymbolLayer.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.4957265" vertical-offset="2522" max-vertical-offset="3211">
-              <caret line="148" column="36" selection-start-line="148" selection-start-column="36" selection-end-line="148" selection-end-column="36" />
+            <state vertical-scroll-proportion="-3.137931" vertical-offset="1999" max-vertical-offset="2698">
+              <caret line="110" column="64" selection-start-line="110" selection-start-column="64" selection-end-line="110" selection-end-column="64" />
               <folding />
             </state>
           </provider>
@@ -130,16 +131,6 @@
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0" vertical-offset="256" max-vertical-offset="1824">
               <caret line="27" column="0" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="SlotGameState.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/virtuos/slotComponent/model/states/SlotGameState.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="741">
-              <caret line="6" column="17" selection-start-line="6" selection-start-column="4" selection-end-line="6" selection-end-column="17" />
               <folding />
             </state>
           </provider>
@@ -196,10 +187,12 @@
         <option value="$PROJECT_DIR$/src/com/virtuos/slotComponent/model/SlotStatesProxy.js" />
         <option value="$PROJECT_DIR$/src/concreteSlot/view/mediators/SymbolLayerMediator.js" />
         <option value="$PROJECT_DIR$/src/com/virtuos/slotComponent/view/element/SymbolImage.js" />
-        <option value="$PROJECT_DIR$/project.json" />
         <option value="$PROJECT_DIR$/src/app.js" />
-        <option value="$PROJECT_DIR$/src/com/virtuos/slotComponent/view/animations/RollingTypeReelAnimation.js" />
         <option value="$PROJECT_DIR$/src/concreteSlot/view/testViews/testSymbolLayer.js" />
+        <option value="$PROJECT_DIR$/src/com/virtuos/slotComponent/view/animations/RollingTypeReelAnimation.js" />
+        <option value="$PROJECT_DIR$/src/com/virtuos/slotComponent/view/animations/AbstractReelAnimation.js" />
+        <option value="$PROJECT_DIR$/src/com/virtuos/slotComponent/view/animations/data/RollingReelAnimationData.js" />
+        <option value="$PROJECT_DIR$/project.json" />
       </list>
     </option>
   </component>
@@ -440,6 +433,44 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="animations" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ComponentSlight" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ComponentSlight" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="com" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="virtuos" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="slotComponent" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="view" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="animations" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="data" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -901,14 +932,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/app.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="152" max-vertical-offset="2052">
-          <caret line="8" column="8" selection-start-line="8" selection-start-column="8" selection-end-line="8" selection-end-column="8" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/main.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="190" max-vertical-offset="323">
@@ -1217,14 +1240,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/resource.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="969">
-          <caret line="30" column="60" selection-start-line="30" selection-start-column="60" selection-end-line="30" selection-end-column="61" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/config.json">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1254">
@@ -1241,28 +1256,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/virtuos/slotComponent/view/animations/AbstractReelAnimation.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1045">
-          <caret line="3" column="25" selection-start-line="3" selection-start-column="4" selection-end-line="3" selection-end-column="25" />
-          <folding>
-            <element signature="e#0#44#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/virtuos/slotComponent/model/SlotStatesProxy.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1463">
           <caret line="16" column="90" selection-start-line="16" selection-start-column="8" selection-end-line="16" selection-end-column="90" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/project.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.4974093" vertical-offset="320" max-vertical-offset="1102">
-          <caret line="32" column="65" selection-start-line="32" selection-start-column="65" selection-end-line="32" selection-end-column="65" />
           <folding />
         </state>
       </provider>
@@ -1293,19 +1290,55 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/virtuos/slotComponent/view/animations/RollingTypeReelAnimation.js">
+    <entry file="file://$PROJECT_DIR$/src/concreteSlot/view/testViews/testSymbolLayer.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-8.586206" vertical-offset="1556" max-vertical-offset="2128">
-          <caret line="95" column="59" selection-start-line="95" selection-start-column="57" selection-end-line="95" selection-end-column="59" />
+        <state vertical-scroll-proportion="-3.137931" vertical-offset="1999" max-vertical-offset="2698">
+          <caret line="110" column="64" selection-start-line="110" selection-start-column="64" selection-end-line="110" selection-end-column="64" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/concreteSlot/view/testViews/testSymbolLayer.js">
+    <entry file="file://$PROJECT_DIR$/src/com/virtuos/slotComponent/view/animations/AbstractReelAnimation.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.4957265" vertical-offset="2522" max-vertical-offset="3211">
-          <caret line="148" column="36" selection-start-line="148" selection-start-column="36" selection-end-line="148" selection-end-column="36" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1368">
+          <caret line="3" column="0" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="43" />
+          <folding>
+            <element signature="e#0#44#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/virtuos/slotComponent/view/animations/RollingTypeReelAnimation.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-15.068966" vertical-offset="0" max-vertical-offset="2223">
+          <caret line="23" column="5" selection-start-line="23" selection-start-column="5" selection-end-line="23" selection-end-column="5" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/resource.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.8962264" vertical-offset="0" max-vertical-offset="969">
+          <caret line="30" column="60" selection-start-line="30" selection-start-column="60" selection-end-line="30" selection-end-column="61" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/project.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.33333334" vertical-offset="320" max-vertical-offset="1121">
+          <caret line="27" column="64" selection-start-line="27" selection-start-column="64" selection-end-line="27" selection-end-column="64" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/virtuos/slotComponent/view/animations/data/RollingReelAnimationData.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.56677526" vertical-offset="89" max-vertical-offset="703">
+          <caret line="25" column="0" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#44#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>

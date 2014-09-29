@@ -40,6 +40,23 @@ var AbstractReelAnimation=cc.Class.extend({
         }
     },
 
+    //start play
+    playIntroBounce:function()
+    {
+        this.resetAnimHalves();
+        this.onPlayIntroBounce(0);
+    },
+
+    resetAnimHalves:function()
+    {
+
+    },
+
+    onPlayIntroBounce:function(reelIndex)
+    {
+
+    },
+
     stop:function($reel,$anticipationReels)
     {
 

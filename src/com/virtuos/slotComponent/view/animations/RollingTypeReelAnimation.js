@@ -36,6 +36,11 @@ var RollingTypeReelAnimation=AbstractReelAnimation.extend({
         this.updateReelCanvas(ticks);
     },
 
+    rebuildSymbolsStack:function()
+    {
+
+    },
+
     updateReelCanvas:function(ticksMs)
     {
 
@@ -53,14 +58,14 @@ var RollingTypeReelAnimation=AbstractReelAnimation.extend({
             {
                 tempSymbol=this._viewSymbolGrid[i][j]
                 if(i==2)
-                 tempSymbol.y-=180;
+                tempSymbol.y-=360;
                 else if(i>=0)
                 {
                     tempSymbol.y-=60;
                 }
                 if(tempSymbol.y<-400)
                 {
-                    tempSymbol.y+=columnLength*125//this._viewSymbolGrid[i][columnLength-1].y+125;
+                    tempSymbol.y+=columnLength*125;//this._viewSymbolGrid[i][columnLength-1].y+125;
                 }
 
             }

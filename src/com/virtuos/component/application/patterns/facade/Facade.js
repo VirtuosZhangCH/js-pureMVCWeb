@@ -115,8 +115,8 @@ var Facade  = cc.Class.extend({
 
     sendNotification:function(notificationName,body,type)
     {
-        body=body|null;
-        type=type|null;
+        body=body||null;
+        type=type||null;
         this.notifyObservers(new Notification(notificationName, body, type));
 
     },

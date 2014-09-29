@@ -11,31 +11,17 @@ var VirtuosLoadScene= cc.Scene.extend({
      */
     init : function(){
         var self = this;
-
-        //logo
-        var logoWidth = 50;
-        var logoHeight = 20;
-
         // bg
         var bgLayer = self._bgLayer = new cc.LayerColor(cc.color(32, 32, 32, 255));
         bgLayer.setPosition(cc.visibleRect.bottomLeft);
         self.addChild(bgLayer, 0);
 
         //image move to CCSceneFile.js
-        var fontSize = 24, lblHeight =  -logoHeight / 2 + 100;
-        if(cc._loaderImage){
-            //loading logo
-            cc.loader.loadImg(cc._loaderImage, {isCrossOrigin : false }, function(err, img){
-                logoWidth = img.width;
-                logoHeight = img.height;
-                self._initStage(img, cc.visibleRect.center);
-            });
-            fontSize = 14;
-            lblHeight = -logoHeight / 2 - 10;
-        }
+        var fontSize = 24;
+
         //loading percent
         var label = self._label =new cc.LabelTTF("LL!!!!!!!... 0%", "Arial", fontSize);
-        label.setPosition(cc.pAdd(cc.visibleRect.center, cc.p(0, lblHeight)));
+        label.setPosition(cc.pAdd(cc.visibleRect.center, cc.p(0, 100)));
         label.setColor(cc.color(180, 180, 180));
         bgLayer.addChild(this._label, 10);
         return true;
@@ -67,6 +53,7 @@ var VirtuosLoadScene= cc.Scene.extend({
         cc.Node.prototype.onExit.call(this);
         var tmpStr = "LL!!!!!... 0%";
         this._label.setString(tmpStr);
+        this.removeAllChildren();
     },
 
     /**

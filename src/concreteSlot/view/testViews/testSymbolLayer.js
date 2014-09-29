@@ -98,7 +98,7 @@ var testSymbolLayer=cc.Sprite.extend({
 
     },
 
-    play:function()
+    playReelAnimation:function()
     {
         //this.testSymbol.getStaticSprite().setOpacity(122);
         this.testSymbol.play();
@@ -115,7 +115,7 @@ var testSymbolLayer=cc.Sprite.extend({
         this._animationController.enterFrameHandler();
     },
 
-    init:function()
+    initChildren:function()
     {
 
     }

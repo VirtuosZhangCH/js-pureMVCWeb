@@ -17,7 +17,7 @@ var SlotGameViewMediator=AbstractSlotComponentMediator.extend({
     },*/
     mapNotifications:function()
     {
-        this.notificationMap.add("test",this.handleTest,this);
+        //this.notificationMap.add("test",this.handleTest,this);
     },
 
     onRegister:function()

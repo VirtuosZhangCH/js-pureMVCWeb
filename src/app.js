@@ -2,12 +2,7 @@
 var HelloWorldLayer = cc.Layer.extend({
     sprite:null,
     controlBar:null,
-    testClassRef:function(ref)
-    {
-        var a =new ref("BWW_Pic1_00",60,1,.04);
-        this.addChild(a.getStaticSprite());
-        //AbstractAnimation("BWW_Pic1_00",60,1,.04);
-    },
+
     ctor:function () {
         //////////////////////////////
         // 1. super init first
@@ -16,10 +11,10 @@ var HelloWorldLayer = cc.Layer.extend({
         //this.testClassRef(AbstractAnimation);
 
         this.controlBar=new testControlBarLayer();
-        //this.addChild(this.controlBar,5);
+        this.addChild(this.controlBar,5);
 
         this.symbolLayer=new testSymbolLayer();
-        //this.addChild(this.symbolLayer,1);
+        this.addChild(this.symbolLayer,1);
 
         this.symbolLayer.x=size.width>>1;
         this.symbolLayer.y=size.height>>1;
@@ -80,7 +75,7 @@ var HelloWorldLayer = cc.Layer.extend({
                 cc.tintTo(2.5,255,125,0)
             )
         );*/
-        return true;
+        //return true;
     }
 });
 
@@ -93,15 +88,14 @@ var HelloWorldScene = cc.Scene.extend({
         cc.spriteFrameCache.addSpriteFrames(g_resources[9]);
         cc.spriteFrameCache.addSpriteFrames(g_resources[11]);
         cc.spriteFrameCache.addSpriteFrames(g_resources[13]);
-
         this._super();
         var layer = new HelloWorldLayer();
         this.addChild(layer);
 
+
         //start MVC here
         var _facade = SlotFacade.getInstance();
         _facade.startup(SlotDataProxy,SlotStatesProxy,layer,SlotGameViewMediator);
-
 
     }
 });

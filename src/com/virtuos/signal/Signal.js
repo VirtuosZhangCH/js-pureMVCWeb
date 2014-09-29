@@ -20,7 +20,7 @@ var Signal  = cc.Class.extend({
         },
         dispatch:function($par)
         {
-            $par=$par|null;
+            $par=$par||null;
             this.func.apply(this.point,[$par]);
         },
         registBind:function()

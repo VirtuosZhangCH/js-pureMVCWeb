@@ -4,6 +4,7 @@
 var ControlBarLayerMediator=AbstractSlotComponentMediator.extend({
     _view:null,
     _slotDataProxy:null,
+    _slotStatesProxy:null,
     ctor:function(name,viewComponent)
     {
         this._super(name,viewComponent);
@@ -23,6 +24,7 @@ var ControlBarLayerMediator=AbstractSlotComponentMediator.extend({
         //var reg=this._view.sigOnClick.registBind.bind(this);
         //reg();
         this._slotDataProxy = this.facade.retrieveProxy(SlotDataProxy.NAME);
+        this._slotStatesProxy = this.facade.retrieveProxy(SlotStatesProxy.NAME);
         //var addBind=this._view.sigOnClick.add.bind(this)
         this._view.sigOnClick.add(this.onSpin,this);
        // addBind(this.onSpin,this)
@@ -34,8 +36,7 @@ var ControlBarLayerMediator=AbstractSlotComponentMediator.extend({
         cc.log("SPIN!!!!!!");
         cc.log(this._slotDataProxy.isSpinFree=true);
         //TODO sendNotifications
-        this.sendNotification("test",123);
-       // this._slotDataProxy.isAutoSpin=true;
+        this._slotStatesProxy.currentState=SlotGameState.PLAYING_INTRO_REEL_ANIMATIONS;
     },
 
     sendNotification:function($notificationName,$body, $type)

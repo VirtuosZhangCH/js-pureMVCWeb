@@ -7,8 +7,8 @@ var Notification  = cc.Class.extend({
     type:null,
     ctor:function($name, $body, $type)
     {
-        var $body=$body|null;
-        var $type=$type|null;
+        var $body=$body||null;
+        var $type=$type||null;
 
         this.name = $name;
         this.body = $body;

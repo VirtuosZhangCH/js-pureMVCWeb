@@ -18,7 +18,20 @@ var SymbolLayerMediator=AbstractSlotComponentMediator.extend({
 
     mapNotifications:function()
     {
-        this.notificationMap.add("test",this.handleTest,this);
+        //this.notificationMap.add("test",this.handleTest,this);
+        this.notificationMap.add(NotesApplication.SLOT_GAME_STATE_CHANGED,this.handleGameStateChanged,this);
+    },
+
+    handleGameStateChanged:function(body,point)
+    {
+        //if(body)
+        switch  ( body.getBody())
+        {
+            case SlotGameState.PLAYING_INTRO_REEL_ANIMATIONS:
+                point._view.playReelAnimation();
+                break;
+        }
+
     },
 
     handleTest:function(body,point)
@@ -41,7 +54,7 @@ var SymbolLayerMediator=AbstractSlotComponentMediator.extend({
         //if is a bonus win skip
         //else change states to
         //this.sendNotification("test",123);
-        // this._slotDataProxy.isAutoSpin=true;
+        //this._slotDataProxy.isAutoSpin=true;
     },
 
     sendNotification:function($notificationName,$body, $type)

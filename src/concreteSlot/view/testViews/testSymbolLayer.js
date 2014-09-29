@@ -22,7 +22,7 @@ var testSymbolLayer=cc.Sprite.extend({
         cc.Sprite.prototype.ctor.call(this);
 
         //clipper
-        this.createClipper();
+        this.createChildren();
 
         this.testSymbol=new AbstractAnimation("BWW_Pic1_00",1,60,.04)
         //this.addChild(this.testSymbol.getStaticSprite());
@@ -43,6 +43,13 @@ var testSymbolLayer=cc.Sprite.extend({
         //this.testSymbol3.x=200;
         //this.testSymbol3.y=600;
         this.testSymbol3.setPosition(450,0)
+    },
+
+    createChildren:function()
+    {
+        this._symbolsContainer=new cc.Sprite();
+        this.addChild(this._symbolsContainer);
+        this.createClipper();
     },
 
     createClipper:function()
@@ -80,8 +87,7 @@ var testSymbolLayer=cc.Sprite.extend({
         this._animationController.initBlurSymbols();
         var content = this._reelAnimationsContainer
         content.tag = "Reel Content";
-        content.anchorX = 0.5;
-        content.anchorY = 0.5;
+
         content.x = this.clipper.width / 2;
         content.y = this.clipper.height / 2;
         this.clipper.addChild(content);
@@ -117,6 +123,42 @@ var testSymbolLayer=cc.Sprite.extend({
 
     initChildren:function()
     {
+        this.initSymbols();
+    },
 
+    initSymbols:function()
+    {
+        this.symbolFrames=[];
+        this._symbolGrid=[];
+        for(var i = 1; i <= 12; i++)
+        {
+            var str = i<10?"Symbol_000" + i + ".png":"Symbol_00" + i + ".png";
+            var frame = cc.spriteFrameCache.getSpriteFrame(str);
+            this.symbolFrames.push(frame);
+        }
+
+        var tempImageArr=[];
+        for(var i=0;i<5;i++)
+        {
+            //tempArr=[];
+            tempImageArr=[];
+            for(var j=0;j<5;j++)
+            {
+                var symbol=cc.Sprite.create("#Symbol_0001.png");
+                var symbolImage=new SymbolImage(symbol,this.symbolFrames);
+                //TODO optimize here
+                symbolImage.initX=symbol.x=(i-2)*165-4;
+                symbolImage.initY=symbol.y=(j-2)*125-24;
+
+                //tempArr.push(symbol);
+                tempImageArr.push(symbolImage);
+                this._symbolsContainer.addChild(symbol);
+
+            }
+            this._symbolGrid.push(tempImageArr);
+        }
+        return this._symbolGrid;
     }
+
+
 })

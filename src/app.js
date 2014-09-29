@@ -18,6 +18,8 @@ var HelloWorldLayer = cc.Layer.extend({
 
         this.symbolLayer.x=size.width>>1;
         this.symbolLayer.y=size.height>>1;
+
+        this.symbolLayer.initSymbols();
         /////////////////////////////
         // 2. add a menu item with "X" image, which is clicked to quit the program
         //    you may modify it.

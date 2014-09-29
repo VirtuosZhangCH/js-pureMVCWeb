@@ -93,7 +93,7 @@ var RollingTypeReelAnimation=AbstractReelAnimation.extend({
                 tempSymbol=new cc.Sprite(strN);
                 this._reelContainer.addChild(tempSymbol);
 
-                tempSymbol.anchorX= tempSymbol.anchorY=.5;
+                //tempSymbol.anchorX= tempSymbol.anchorY=.5;
 
                 tempSymbol.x=startX+165*i;
                 tempSymbol.y=startY+125*(j-1);

@@ -66,6 +66,13 @@ var testSymbolLayer=cc.Sprite.extend({
         this._reelAnimationsContainer=new cc.SpriteBatchNode(res.s_blur);
         //TODO add symbols
         this._animationController=this.initAsRollingTypeReelAnimation(this._reelAnimationsContainer);
+
+        /*this._animationController.setAnimationParams(this._blurredTexturesMap,
+                                                            4,
+                                                            200,
+                                                            160,
+                                                            20,
+                                                            20)*/
         this._animationController.initBlurSymbols();
         var content = this._reelAnimationsContainer
         content.tag = "Reel Content";
@@ -76,9 +83,9 @@ var testSymbolLayer=cc.Sprite.extend({
 
     },
 
-    initAsRollingTypeReelAnimation:function($animationContainer)
+    initAsRollingTypeReelAnimation:function($reelAnimationsContainer)
     {
-         return new RollingTypeReelAnimation($animationContainer);
+         return new RollingTypeReelAnimation($reelAnimationsContainer);
     },
 
     createCustomReel:function()
@@ -88,22 +95,27 @@ var testSymbolLayer=cc.Sprite.extend({
 
     playReelAnimation:function()
     {
-        this.schedule(this.playReel,1/24);
-    },
-
-    playReel:function()
-    {
-        this._animationController.enterFrameHandler();
+       //this.schedule(this.playReel,1/24);
+       this._animationController.play();
     },
 
     initChildren:function()
     {
         this.initSymbols();
+        //this.initAnimationController(this._animationController);
+
+        return this._symbolGrid;
+    },
+
+    initAnimationController:function(animationController)
+    {
+        animationController.setSymbolGrid(this._viewSymbolGrid)
     },
 
     initSymbols:function()
     {
         this.symbolFrames=[];
+        this._viewSymbolGrid=[];
         this._symbolGrid=[];
         for(var i = 1; i <= 12; i++)
         {
@@ -113,14 +125,16 @@ var testSymbolLayer=cc.Sprite.extend({
         }
 
         var tempImageArr=[];
+        var symbol
+        var symbolImage
         for(var i=0;i<5;i++)
         {
             //tempArr=[];
             tempImageArr=[];
             for(var j=0;j<5;j++)
             {
-                var symbol=cc.Sprite.create("#Symbol_0001.png");
-                var symbolImage=new SymbolImage(symbol,this.symbolFrames);
+                symbol=cc.Sprite.create("#Symbol_0001.png");
+                symbolImage=new SymbolImage(symbol,this.symbolFrames);
                 //TODO optimize here
                 symbolImage.initX=symbol.x=(i-2)*165-4;
                 symbolImage.initY=symbol.y=(j-2)*125-24;
@@ -131,7 +145,9 @@ var testSymbolLayer=cc.Sprite.extend({
 
             }
             this._symbolGrid.push(tempImageArr);
+
+            //this._viewSymbolGrid.push(tempImageArr);
         }
-        return this._symbolGrid;
+
     }
 })

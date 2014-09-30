@@ -1,7 +1,7 @@
 /**
  * Created by zhangchi on 2014/9/29.
  */
-var AbstractReelAnimation=cc.Class.extend({
+var RollingReelAnimationData=cc.Class.extend({
     isAnimating:false,
     isStopping:true,
     distanceSymbolsMoved:0,

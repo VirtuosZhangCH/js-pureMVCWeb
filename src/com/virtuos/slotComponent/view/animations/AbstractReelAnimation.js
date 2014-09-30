@@ -20,10 +20,24 @@ var AbstractReelAnimation=cc.Class.extend({
     _columnWidth:135,
     _columnGap:27,
 
+    _reelAnimationStartDelay:20,
+    _reelAnimationEndBounceDistance:20,
+
+    _doneFirstHalfAnimation:[],
+    _doneSecondHalfAnimation:[],
+
+    _startBounceBackDistance:50,
+    _endBounceBackDistance:50,
+    _startBounceBackDistance:1,
+    _endBounceBackDuration:1,
     ctor:function()
     {
 
     },
+    //jeff
+
+
+    //component
 
     onLoopComplete:function($reelId)
     {
@@ -40,6 +54,16 @@ var AbstractReelAnimation=cc.Class.extend({
         }
     },
 
+    setSymbolGrid:function(symbols)
+    {
+        this._viewSymbolGrid = symbols;
+    },
+
+    play:function()
+    {
+        this.playIntroBounce();
+    },
+
     //start play
     playIntroBounce:function()
     {
@@ -49,7 +73,8 @@ var AbstractReelAnimation=cc.Class.extend({
 
     resetAnimHalves:function()
     {
-
+        this._doneSecondHalfAnimation.length = 0;
+        this._doneFirstHalfAnimation.length = 0;
     },
 
     onPlayIntroBounce:function(reelIndex)

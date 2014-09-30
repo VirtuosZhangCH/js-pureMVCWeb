@@ -2,11 +2,12 @@
  * Created by zhangchi on 2014/9/25.
  */
 var RollingTypeReelAnimation=AbstractReelAnimation.extend({
-    _reelContainer:null,
+    _reelCanvas:null,
     _lastFrameTime:0,
     _isPlaying:false,
     _rollingSpeed:100,
     _anticipationRollingSpeed:200,
+    _symbolTexturesMap:[],
 
     _symbolIDs:["N","T","A","J","K","Q","P1","P2","P3","P4","W"],
     _symbolOrder:
@@ -17,7 +18,8 @@ var RollingTypeReelAnimation=AbstractReelAnimation.extend({
         ["Q", "K", "T", "P4", "K", "P1", "P1", "J", "N", "P3", "K", "K", "T",  "N", "P2", "Q", "N", "P4", "T"]],//, "P1", "P4", "N", "A", "P4", "J", "P1", "A", "P1", "P1", "J", "A", "A", "P2", "P3", "J", "A", "A", "P2", "K", "K", "T", "N",  "A", "P3", "J", "P3", "T", "A", "P3", "T", "A", "P4", "P1", "A","P1","P1","P1","P1","P2"]],
     ctor:function($reelContainer)
     {
-        this._reelContainer=$reelContainer;
+        this._reelCanvas=$reelContainer;
+        this._reelsAnimData=[];
     },
 
     enterFrameHandler:function()
@@ -36,14 +38,67 @@ var RollingTypeReelAnimation=AbstractReelAnimation.extend({
         this.updateReelCanvas(ticks);
     },
 
+    play:function()
+    {
+        this.rebuildSymbolsStack();
+        this._super();
+
+        //commit out it to show test effect
+        this._reelCanvas.schedule(this.enterFrameHandler.bind(this),1/24);
+    },
+
     rebuildSymbolsStack:function()
     {
+        var numReels=this._viewSymbolGrid.length
+        for (var i = 0; i <numReels ; i++)
+        {
+            var column=[];
+            var j;
+            for (j = this._viewSymbolGrid[i].length - 1; j >= 0; j--)
+            {
+                column.push(this._viewSymbolGrid[i][j].symbolName);
+            }
+            //if the _symbolOrder is provided by layer
+            if(this._symbolOrder)
+            {
+                if(this._symbolOrder.length != numReels)
+                {
+                    throw new Error("The length of _symbolOrder is not equal to number of reels");
+                }
 
+                var reelLength  = this._symbolOrder[i].length;
+                var symbolIndex  = Math.floor(Math.random() * reelLength);
+                while (column.length < reelLength)
+                {
+                    column.push(this._symbolOrder[i][symbolIndex]);
+                    symbolIndex = (symbolIndex + 1) % reelLength;
+                }
+            }
+            //else
+            //otherwise,we gonna take a random distribution
+           /* {
+                _symbolIDs.sort(int(Math.random()-.5));
+                for (j = 0; j < _symbolIDs.length; j++)
+                {
+                    column.push(_symbolIDs[j]);
+                }
+            }*/
+            this._reelsAnimData[i].symbolIDs = column;
+        }
+    },
+
+    getIDsFromMap:function(_symbolTexturesMap)
+    {
+        var array = [];
+        for(var id in _symbolTexturesMap)
+        {
+            array.push(id);
+        }
+        return array;
     },
 
     updateReelCanvas:function(ticksMs)
     {
-
         var speed=this._rollingSpeed;
         var moveDelta=speed * ticksMs / 1000;
         var tempSymbol;
@@ -56,7 +111,7 @@ var RollingTypeReelAnimation=AbstractReelAnimation.extend({
             columnLength=this._viewSymbolGrid[i].length
             for(var j=0;j<columnLength;j++)
             {
-                tempSymbol=this._viewSymbolGrid[i][j]
+                tempSymbol=this._viewSymbolGrid[i][j]._staticSymbolImage;
                 if(i==2)
                 tempSymbol.y-=360;
                 else if(i>=0)
@@ -74,16 +129,24 @@ var RollingTypeReelAnimation=AbstractReelAnimation.extend({
         cc.log("columnLength::",columnLength);
     },
 
-
     initBlurSymbols:function()
     {
-        //return null;
+        //set parament here
         var tempSymbol;
         var id;
         var strN;
         var startX=-335;
         var startY=-30;
-        var temGrid=[]
+        var temGrid=[];
+        var symbolImage;
+
+        for(var i = 1; i <= 12; i++)
+        {
+            var str = i<10?"blur_Symbol_000" + i + ".png":"blur_Symbol_00" + i + ".png";
+            var frame = cc.spriteFrameCache.getSpriteFrame(str);
+            this._symbolTexturesMap.push(frame);
+        }
+
         for(var i=0;i<this._symbolOrder.length;i++)
         {
             temGrid=[]
@@ -95,16 +158,18 @@ var RollingTypeReelAnimation=AbstractReelAnimation.extend({
                 strN= id>9?"#blur_Symbol_00"+id+".png":
                     "#blur_Symbol_000"+id+".png";
 
-                tempSymbol=new cc.Sprite(strN);
-                this._reelContainer.addChild(tempSymbol);
 
-                //tempSymbol.anchorX= tempSymbol.anchorY=.5;
+                tempSymbol=new cc.Sprite(strN);
+                symbolImage=new SymbolImage(tempSymbol,this._symbolTexturesMap);
+                this._reelCanvas.addChild(tempSymbol);
 
                 tempSymbol.x=startX+165*i;
                 tempSymbol.y=startY+125*(j-1);
 
-                temGrid.push(tempSymbol);
+                temGrid.push(symbolImage);
             }
+            var animData  = new RollingReelAnimationData();
+            this._reelsAnimData.push(animData);
 
             this._viewSymbolGrid.push(temGrid);
         }

@@ -96,7 +96,7 @@ var testSymbolLayer=cc.Sprite.extend({
     initChildren:function()
     {
         this.initSymbols();
-        //this.initAnimationController(this._animationController);
+        this.initAnimationController(this._animationController);
 
         return this._symbolGrid;
     },
@@ -105,6 +105,8 @@ var testSymbolLayer=cc.Sprite.extend({
     {
         animationController.setSymbolGrid(this._viewSymbolGrid)
     },
+
+
 
     initSymbols:function()
     {
@@ -131,15 +133,14 @@ var testSymbolLayer=cc.Sprite.extend({
                 var symbolVO = new SymbolVO();
                 symbolVO.reelIndex = i;
                 symbolVO.symbolIndex = j;
-                symbolVO.symbolName = j;
+                symbolVO.symbolName = symbolOrder[i][j];
                 symbolImage=new SymbolImage(symbol,this.symbolFrames,symbolVO);
                 //TODO optimize here
                 symbolImage.initX=symbol.x=(i-2)*165-4;
                 symbolImage.initY=symbol.y=(j-2)*125-24;
 
-
                 //just a test
-                symbolImage.setSource("T");
+                symbolImage.setSource(symbolOrder[i][j]);
 
                 //tempArr.push(symbol);
                 tempImageArr.push(symbolImage);
@@ -148,7 +149,7 @@ var testSymbolLayer=cc.Sprite.extend({
             }
             this._symbolGrid.push(tempImageArr);
 
-            //this._viewSymbolGrid.push(tempImageArr);
+            this._viewSymbolGrid.push(tempImageArr);
         }
 
     }

@@ -12,6 +12,7 @@ var AbstractReelAnimation=cc.Class.extend({
     _reelsPositionHitBottom:[],
     _anticipationReels:[],
     _viewSymbolGrid:[],
+    _blurSymbolGrid:[],
 
     _rollingSpeed:1,
     _symbolHeight:132,
@@ -38,6 +39,28 @@ var AbstractReelAnimation=cc.Class.extend({
 
 
     //component
+    isReadyToStop:function()
+    {
+        return this._doneFirstHalfAnimation.length >= this._viewSymbolGrid.length;
+    },
+
+    onIntroBounceComplete:function(reelIndex)
+    {
+        this.onPlayLoop(reelIndex);
+
+        if(this._doneFirstHalfAnimation.length){
+            this._sigLoopReelAnimationsStarted.dispatch();
+        }
+
+        if (this._doneFirstHalfAnimation.indexOf(reelIndex) == -1)
+        {
+            this._doneFirstHalfAnimation.push(reelIndex);
+            if (this.isReadyToStop())
+            {
+                this._sigAllLoopingReelAnimationsStarted.dispatch();
+            }
+        }
+    },
 
     onLoopComplete:function($reelId)
     {
@@ -77,9 +100,28 @@ var AbstractReelAnimation=cc.Class.extend({
         this._doneFirstHalfAnimation.length = 0;
     },
 
-    onPlayIntroBounce:function(reelIndex)
+    onPlayIntroBounce:function($reelIndex)
     {
+        this._sigReelStarting.dispatch();
 
+        //hardcode here TOBE optimized;
+        var reelSymbols = this._viewSymbolGrid[$reelIndex];
+        for (var i = 0; i < reelSymbols.length; i++)
+        {
+            //reelSymbols[i].visible = $visibility;
+            //reelSymbols[i].reset();
+
+            reelSymbols[i].staticSymbolImage.runAction(cc.sequence(
+                    cc.moveBy(.5,cc.p(0,60)),
+                    cc.callFunc(this.onStartReel,this)
+                ))
+        }
+
+    },
+
+    onStartReel:function (node) {
+        node.stopAllActions(); //After this stop next action not working, if remove this stop everything is working
+        node.visible=false;
     },
 
     stop:function($reel,$anticipationReels)

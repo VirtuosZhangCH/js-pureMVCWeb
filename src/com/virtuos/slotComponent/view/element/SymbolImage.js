@@ -1,18 +1,31 @@
 /**
  * Created by zhangchi on 2014/8/15.
  */
+var symbolOrd=["N","T","A","J","K","Q","P1","P2","P3","P4","S","W"]
 var SymbolImage=cc.Class.extend({
     _staticSymbolImage:null,
     _symbolTextureMap:null,
     initX:0,
     initY:0,
-    ctor:function(symbol,symbolTextureMap)
+    ctor:function(symbol,symbolTextureMap,symbolVO)
     {
         this._staticSymbolImage=symbol;
         this._symbolTextureMap=symbolTextureMap;
-
+        symbolVO=symbolVO||null;
         cc.defineGetterSetter(this,"visible",this.getVisible,this.setVisible);
         cc.defineGetterSetter(this,"staticSymbolImage",this.getStaticSymbolImage);
+        cc.defineGetterSetter(this,"symbolName",this.getSymbolName);
+        cc.defineGetterSetter(this,"symbolVO",null,this.setSymbolVO);
+
+        if(symbolVO)
+        {
+            this._symbolVO = symbolVO;
+        }
+    },
+
+    getSymbolName:function()
+    {
+        return this._symbolVO?this._symbolVO.symbolName:"";
     },
 
     setVisible:function(bol)
@@ -30,9 +43,32 @@ var SymbolImage=cc.Class.extend({
         return this._staticSymbolImage;
     },
 
+    setSymbolVO:function(value)
+    {
+        this._symbolVO = value;
+        if(this._symbolTextureMap.hasOwnProperty(value.symbolName)){
+            this.setSource(value.symbolName);
+            //visible = _visible;
+        }else{
+            throw new Error("Can not find symbol image texture by id:"+value.symbolName);
+        }
+    },
+
     setSource:function(name)
     {
-        this._staticSymbolImage.setSpriteFrame(this._symbolTextureMap[this.getSymbolByName(name)]);
+        //this._symbolName=this.getSymbolByName(name)
+        var symbolId=symbolOrd.indexOf(name)+1;
+        var foreName
+        if(symbolId>9)
+        {
+            foreName=this._symbolVO.isBlur?"blur_Symbol_00":"Symbol_00";
+        }else
+        {
+            foreName=this._symbolVO.isBlur?"blur_Symbol_000":"Symbol_000";
+        }
+        var sourceName=foreName+symbolId+".png"
+        this._staticSymbolImage.setSpriteFrame(sourceName);
+        //this._staticSymbolImage.texture=name;
     },
 
     /*set initX:function($x)

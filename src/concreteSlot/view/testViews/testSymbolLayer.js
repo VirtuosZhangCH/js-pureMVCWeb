@@ -67,12 +67,6 @@ var testSymbolLayer=cc.Sprite.extend({
         //TODO add symbols
         this._animationController=this.initAsRollingTypeReelAnimation(this._reelAnimationsContainer);
 
-        /*this._animationController.setAnimationParams(this._blurredTexturesMap,
-                                                            4,
-                                                            200,
-                                                            160,
-                                                            20,
-                                                            20)*/
         this._animationController.initBlurSymbols();
         var content = this._reelAnimationsContainer
         content.tag = "Reel Content";
@@ -134,10 +128,18 @@ var testSymbolLayer=cc.Sprite.extend({
             for(var j=0;j<5;j++)
             {
                 symbol=cc.Sprite.create("#Symbol_0001.png");
-                symbolImage=new SymbolImage(symbol,this.symbolFrames);
+                var symbolVO = new SymbolVO();
+                symbolVO.reelIndex = i;
+                symbolVO.symbolIndex = j;
+                symbolVO.symbolName = j;
+                symbolImage=new SymbolImage(symbol,this.symbolFrames,symbolVO);
                 //TODO optimize here
                 symbolImage.initX=symbol.x=(i-2)*165-4;
                 symbolImage.initY=symbol.y=(j-2)*125-24;
+
+
+                //just a test
+                symbolImage.setSource("T");
 
                 //tempArr.push(symbol);
                 tempImageArr.push(symbolImage);

@@ -7,6 +7,9 @@ var RollingReelAnimationData=cc.Class.extend({
     distanceSymbolsMoved:0,
     symbolIDs:[],
     bottomPositionIndex:0,
+    //jeff
+    toStart:false,
+    toStop:false,
 
     ctor:function()
     {
@@ -14,6 +17,10 @@ var RollingReelAnimationData=cc.Class.extend({
         this.isStopping = false;
         this.distanceSymbolsMoved = 0;
         this.bottomPositionIndex = 0;
+
+        this.toStart=false;
+        this.toStop=false;
+
     },
 
     showAndStart:function()
@@ -22,6 +29,9 @@ var RollingReelAnimationData=cc.Class.extend({
         this.isStopping = false;
         this.distanceSymbolsMoved = 0;
         this.bottomPositionIndex = 0;
+
+        this.toStart=true;
+        this.toStop=false;
     },
 
     hideAndStop:function()
@@ -30,5 +40,8 @@ var RollingReelAnimationData=cc.Class.extend({
         this.isStopping = false;
         this.distanceSymbolsMoved = 0;
         this.bottomPositionIndex = 0;
+
+        this.toStart=false;
+        this.toStop=true;
     }
 });

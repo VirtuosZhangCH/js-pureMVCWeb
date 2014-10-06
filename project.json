@@ -36,6 +36,7 @@
         "src/com/virtuos/slotComponent/notes/NotesApplication.js",
         "src/com/virtuos/slotComponent/notes/NotesComponent.js",
         "src/com/virtuos/slotComponent/notes/NotesSound.js",
+        "src/com/virtuos/slotComponent/model/vo/SymbolVO.js",
         "src/com/virtuos/slotComponent/model/states/SlotGameMode.js",
         "src/com/virtuos/slotComponent/model/states/SlotGameState.js",
         "src/concreteSlot/view/mediators/SlotGameViewMediator.js",		

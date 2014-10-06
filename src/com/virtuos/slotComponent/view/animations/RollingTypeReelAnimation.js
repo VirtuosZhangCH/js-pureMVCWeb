@@ -158,9 +158,15 @@ var RollingTypeReelAnimation=AbstractReelAnimation.extend({
                 strN= id>9?"#blur_Symbol_00"+id+".png":
                     "#blur_Symbol_000"+id+".png";
 
-
                 tempSymbol=new cc.Sprite(strN);
-                symbolImage=new SymbolImage(tempSymbol,this._symbolTexturesMap);
+
+                var symbolVO = new SymbolVO();
+                symbolVO.reelIndex = i;
+                symbolVO.symbolIndex = j;
+                symbolVO.symbolName = id;
+                symbolVO.isBlur=true;
+
+                symbolImage=new SymbolImage(tempSymbol,this._symbolTexturesMap,symbolVO);
                 this._reelCanvas.addChild(tempSymbol);
 
                 tempSymbol.x=startX+165*i;

@@ -21,7 +21,7 @@ var AbstractReelAnimation=cc.Class.extend({
     _columnWidth:135,
     _columnGap:27,
 
-    _reelAnimationStartDelay:.2,
+    _reelAnimationStartDelay:1,
     _reelAnimationEndBounceDistance:20,
 
     _doneFirstHalfAnimation:[],
@@ -50,6 +50,12 @@ var AbstractReelAnimation=cc.Class.extend({
 
     onIntroBounceComplete:function($reelIndex)
     {
+        var gridLength=this._blurSymbolGrid[$reelIndex].length;
+        for(var i=0;i<gridLength;i++)
+        {
+            this._blurSymbolGrid[$reelIndex][i].visible=true;
+        }
+
         this.onPlayLoop($reelIndex);
 
         if(this._doneFirstHalfAnimation.length){
@@ -126,14 +132,14 @@ var AbstractReelAnimation=cc.Class.extend({
         {
             for(var j=0;j<this._viewSymbolGrid[i].length;j++)
             {
+                var move1 = cc.moveBy(.25, cc.p(0, 60));
                 this._viewSymbolGrid[i][j].staticSymbolImage.runAction(cc.sequence(
                     cc.delayTime(i*startDelay),
-                    cc.moveBy(.5,cc.p(0,60)),
+                    move1,move1.reverse(),
                     cc.callFunc(this.onStartReel,this,j)
                 ))
             }
         }
-
       /*  var nextIndex = $reelIndex + 1;
         if (nextIndex < this._viewSymbolGrid.length) {
             var startDelay = this._reelAnimationStartDelay * .01;
@@ -149,11 +155,6 @@ var AbstractReelAnimation=cc.Class.extend({
                 this.onPlayIntroBounce(nextIndex);
             }
         }*/
-    },
-
-    onStopIntroReel:function(node)
-    {
-        cc.log("DELAYYYYY");
     },
 
     onStartReel:function (node,id) {

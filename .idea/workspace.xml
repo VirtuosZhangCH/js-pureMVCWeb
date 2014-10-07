@@ -4,6 +4,8 @@
     <list default="true" id="5087226b-2311-4fed-9ded-a56b01ff37a8" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/virtuos/slotComponent/view/animations/AbstractReelAnimation.js" afterPath="$PROJECT_DIR$/src/com/virtuos/slotComponent/view/animations/AbstractReelAnimation.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/virtuos/slotComponent/view/animations/RollingTypeReelAnimation.js" afterPath="$PROJECT_DIR$/src/com/virtuos/slotComponent/view/animations/RollingTypeReelAnimation.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/virtuos/slotComponent/view/element/SymbolImage.js" afterPath="$PROJECT_DIR$/src/com/virtuos/slotComponent/view/element/SymbolImage.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/concreteSlot/view/testViews/testSymbolLayer.js" afterPath="$PROJECT_DIR$/src/concreteSlot/view/testViews/testSymbolLayer.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="ComponentSlight.iws" />
@@ -30,8 +32,8 @@
       <file leaf-file-name="RollingTypeReelAnimation.js" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/com/virtuos/slotComponent/view/animations/RollingTypeReelAnimation.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.4754717" vertical-offset="375" max-vertical-offset="3800">
-              <caret line="33" column="0" selection-start-line="33" selection-start-column="0" selection-end-line="33" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.45027125" vertical-offset="2240" max-vertical-offset="3990">
+              <caret line="131" column="58" selection-start-line="131" selection-start-column="58" selection-end-line="131" selection-end-column="58" />
               <folding />
             </state>
           </provider>
@@ -40,19 +42,11 @@
       <file leaf-file-name="AbstractReelAnimation.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/virtuos/slotComponent/view/animations/AbstractReelAnimation.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-10.413794" vertical-offset="21" max-vertical-offset="3572">
-              <caret line="17" column="22" selection-start-line="17" selection-start-column="22" selection-end-line="17" selection-end-column="22" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="jsb_cocos2d.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/runtime/win32/script/jsb_cocos2d.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="30358" max-vertical-offset="53504">
-              <caret line="1634" column="40" selection-start-line="1634" selection-start-column="40" selection-end-line="1634" selection-end-column="40" />
-              <folding />
+            <state vertical-scroll-proportion="67.413795" vertical-offset="2202" max-vertical-offset="3325">
+              <caret line="13" column="23" selection-start-line="13" selection-start-column="23" selection-end-line="13" selection-end-column="23" />
+              <folding>
+                <element signature="e#3648#4255#0" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -62,16 +56,6 @@
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0" vertical-offset="30358" max-vertical-offset="53504">
               <caret line="1628" column="4" selection-start-line="1628" selection-start-column="4" selection-end-line="1628" selection-end-column="4" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="CCBoot.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/frameworks/cocos2d-html5/CCBoot.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="37453" max-vertical-offset="41192">
-              <caret line="2004" column="26" selection-start-line="2004" selection-start-column="26" selection-end-line="2004" selection-end-column="26" />
               <folding />
             </state>
           </provider>
@@ -87,21 +71,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Signal.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/virtuos/signal/Signal.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="102" max-vertical-offset="703">
-              <caret line="24" column="12" selection-start-line="24" selection-start-column="12" selection-end-line="24" selection-end-column="12" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="testSymbolLayer.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/concreteSlot/view/testViews/testSymbolLayer.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="443" max-vertical-offset="3059">
-              <caret line="135" column="56" selection-start-line="135" selection-start-column="56" selection-end-line="135" selection-end-column="56" />
+            <state vertical-scroll-proportion="-7.9310346" vertical-offset="1784" max-vertical-offset="3021">
+              <caret line="106" column="6" selection-start-line="106" selection-start-column="6" selection-end-line="106" selection-end-column="6" />
               <folding />
             </state>
           </provider>
@@ -110,8 +84,8 @@
       <file leaf-file-name="SymbolImage.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/virtuos/slotComponent/view/element/SymbolImage.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="456" max-vertical-offset="1976">
-              <caret line="76" column="5" selection-start-line="76" selection-start-column="5" selection-end-line="76" selection-end-column="5" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1976">
+              <caret line="18" column="48" selection-start-line="18" selection-start-column="48" selection-end-line="18" selection-end-column="48" />
               <folding />
             </state>
           </provider>
@@ -149,10 +123,10 @@
         <option value="$PROJECT_DIR$/src/app.js" />
         <option value="$PROJECT_DIR$/project.json" />
         <option value="$PROJECT_DIR$/src/com/virtuos/slotComponent/model/vo/SymbolVO.js" />
-        <option value="$PROJECT_DIR$/src/concreteSlot/view/testViews/testSymbolLayer.js" />
-        <option value="$PROJECT_DIR$/src/com/virtuos/slotComponent/view/element/SymbolImage.js" />
         <option value="$PROJECT_DIR$/src/com/virtuos/slotComponent/view/animations/data/RollingReelAnimationData.js" />
         <option value="$PROJECT_DIR$/src/com/virtuos/signal/Signal.js" />
+        <option value="$PROJECT_DIR$/src/com/virtuos/slotComponent/view/element/SymbolImage.js" />
+        <option value="$PROJECT_DIR$/src/concreteSlot/view/testViews/testSymbolLayer.js" />
         <option value="$PROJECT_DIR$/src/com/virtuos/slotComponent/view/animations/AbstractReelAnimation.js" />
         <option value="$PROJECT_DIR$/src/com/virtuos/slotComponent/view/animations/RollingTypeReelAnimation.js" />
       </list>
@@ -954,7 +928,7 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="85" />
+      <option name="time" value="86" />
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
@@ -991,6 +965,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="114" max-vertical-offset="1520">
           <caret line="16" column="76" selection-start-line="16" selection-start-column="76" selection-end-line="16" selection-end-column="76" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1062,6 +1037,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.23941368" vertical-offset="214" max-vertical-offset="893">
           <caret line="19" column="10" selection-start-line="19" selection-start-column="10" selection-end-line="19" selection-end-column="10" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1090,6 +1066,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="89" max-vertical-offset="703">
           <caret line="31" column="2" selection-start-line="31" selection-start-column="2" selection-end-line="31" selection-end-column="2" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1232,42 +1209,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/concreteSlot/view/testViews/testSymbolLayer.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="443" max-vertical-offset="3059">
-          <caret line="135" column="56" selection-start-line="135" selection-start-column="56" selection-end-line="135" selection-end-column="56" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/virtuos/slotComponent/model/vo/SymbolVO.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.39175257" vertical-offset="0" max-vertical-offset="582">
           <caret line="14" column="2" selection-start-line="14" selection-start-column="2" selection-end-line="14" selection-end-column="2" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/virtuos/slotComponent/view/element/SymbolImage.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="456" max-vertical-offset="1976">
-          <caret line="76" column="5" selection-start-line="76" selection-start-column="5" selection-end-line="76" selection-end-column="5" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/concreteSlot/view/mediators/ControlBarLayerMediator.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="406" max-vertical-offset="988">
-          <caret line="38" column="43" selection-start-line="38" selection-start-column="43" selection-end-line="38" selection-end-column="43" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/virtuos/signal/Signal.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="102" max-vertical-offset="703">
-          <caret line="24" column="12" selection-start-line="24" selection-start-column="12" selection-end-line="24" selection-end-column="12" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1278,14 +1223,6 @@
           <folding>
             <element signature="e#0#44#0" expanded="false" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/frameworks/cocos2d-html5/CCBoot.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="37453" max-vertical-offset="41192">
-          <caret line="2004" column="26" selection-start-line="2004" selection-start-column="26" selection-end-line="2004" selection-end-column="26" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1321,6 +1258,30 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/virtuos/signal/Signal.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.6332737" vertical-offset="102" max-vertical-offset="703">
+          <caret line="24" column="12" selection-start-line="24" selection-start-column="12" selection-end-line="24" selection-end-column="12" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/concreteSlot/view/mediators/ControlBarLayerMediator.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="406" max-vertical-offset="988">
+          <caret line="38" column="43" selection-start-line="38" selection-start-column="43" selection-end-line="38" selection-end-column="43" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frameworks/cocos2d-html5/CCBoot.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.33273703" vertical-offset="37453" max-vertical-offset="41192">
+          <caret line="2004" column="26" selection-start-line="2004" selection-start-column="26" selection-end-line="2004" selection-end-column="26" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/frameworks/js-bindings/bindings/script/jsb_cocos2d.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="30358" max-vertical-offset="53504">
@@ -1329,18 +1290,36 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/virtuos/slotComponent/view/element/SymbolImage.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1976">
+          <caret line="18" column="48" selection-start-line="18" selection-start-column="48" selection-end-line="18" selection-end-column="48" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/concreteSlot/view/testViews/testSymbolLayer.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-7.9310346" vertical-offset="1784" max-vertical-offset="3021">
+          <caret line="106" column="6" selection-start-line="106" selection-start-column="6" selection-end-line="106" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/virtuos/slotComponent/view/animations/AbstractReelAnimation.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-10.413794" vertical-offset="21" max-vertical-offset="3572">
-          <caret line="17" column="22" selection-start-line="17" selection-start-column="22" selection-end-line="17" selection-end-column="22" />
-          <folding />
+        <state vertical-scroll-proportion="67.413795" vertical-offset="2202" max-vertical-offset="3325">
+          <caret line="13" column="23" selection-start-line="13" selection-start-column="23" selection-end-line="13" selection-end-column="23" />
+          <folding>
+            <element signature="e#3648#4255#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/virtuos/slotComponent/view/animations/RollingTypeReelAnimation.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.4754717" vertical-offset="375" max-vertical-offset="3800">
-          <caret line="33" column="0" selection-start-line="33" selection-start-column="0" selection-end-line="33" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.45027125" vertical-offset="2240" max-vertical-offset="3990">
+          <caret line="131" column="58" selection-start-line="131" selection-start-column="58" selection-end-line="131" selection-end-column="58" />
           <folding />
         </state>
       </provider>

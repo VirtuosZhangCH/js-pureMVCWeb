@@ -106,8 +106,6 @@ var testSymbolLayer=cc.Sprite.extend({
         animationController.setSymbolGrid(this._viewSymbolGrid)
     },
 
-
-
     initSymbols:function()
     {
         this.symbolFrames=[];

@@ -18,7 +18,7 @@ var RollingTypeReelAnimation=AbstractReelAnimation.extend({
     enterFrameHandler:function()
     {
         //test here
-        this._isPlaying=true
+        //this._isPlaying=true
         //====
         var currentTime  = new Date().getTime();
         var ticks  = Math.min(Number.POSITIVE_INFINITY, currentTime - this._lastFrameTime);
@@ -39,6 +39,17 @@ var RollingTypeReelAnimation=AbstractReelAnimation.extend({
 
         //commit out it to show test effect
         //this._reelCanvas.schedule(this.enterFrameHandler.bind(this),1/24);
+    },
+
+    onPlayLoop:function($reelIndex)
+    {
+        this._isPlaying = true;
+        this._reelsAnimData[$reelIndex].introComplete();
+
+        if($reelIndex==0)
+        {
+            this._reelCanvas.schedule(this.enterFrameHandler.bind(this),1/24);
+        }
     },
 
     rebuildSymbolsStack:function()
@@ -107,19 +118,20 @@ var RollingTypeReelAnimation=AbstractReelAnimation.extend({
             {
                 this._reelsAnimData[i].showAndStart();
                 var introLen=this._viewSymbolGrid[i].length
-                for (var j = 0; j < introLen; j++) {
-                    this._viewSymbolGrid[i][j].visible=false;
+                for (var j = 0; j < introLen; j++)
+                {
+                    //this._viewSymbolGrid[i][j].visible=false;
                 }
 
             }else {
                 for (var j = 0; j < columnLength; j++) {
 
                     tempSymbol = this._blurSymbolGrid[i][j]._staticSymbolImage;
-                    if (i == 2) {
-                        tempSymbol.y -= 360;
-                    } else if (i >= 0) {
+                   // if (i == 2) {
+                       // tempSymbol.y -= 360;
+                   // } else if (i >= 0) {
                         tempSymbol.y -= 60;
-                    }
+                   // }
                     if (tempSymbol.y < -400) {
                         tempSymbol.y += columnLength * 125;//this._viewSymbolGrid[i][columnLength-1].y+125;
                     }

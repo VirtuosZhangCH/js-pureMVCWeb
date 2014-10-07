@@ -21,16 +21,20 @@ var AbstractReelAnimation=cc.Class.extend({
     _columnWidth:135,
     _columnGap:27,
 
-    _reelAnimationStartDelay:20,
+    _reelAnimationStartDelay:.2,
     _reelAnimationEndBounceDistance:20,
 
     _doneFirstHalfAnimation:[],
     _doneSecondHalfAnimation:[],
 
+    _introReelCompleted:0,
+    _outroReelCompleted:0,
+
     _startBounceBackDistance:50,
     _endBounceBackDistance:50,
     _startBounceBackDistance:1,
     _endBounceBackDuration:1,
+
     ctor:function()
     {
 
@@ -44,17 +48,17 @@ var AbstractReelAnimation=cc.Class.extend({
         return this._doneFirstHalfAnimation.length >= this._viewSymbolGrid.length;
     },
 
-    onIntroBounceComplete:function(reelIndex)
+    onIntroBounceComplete:function($reelIndex)
     {
-        this.onPlayLoop(reelIndex);
+        this.onPlayLoop($reelIndex);
 
         if(this._doneFirstHalfAnimation.length){
             this._sigLoopReelAnimationsStarted.dispatch();
         }
 
-        if (this._doneFirstHalfAnimation.indexOf(reelIndex) == -1)
+        if (this._doneFirstHalfAnimation.indexOf($reelIndex) == -1)
         {
-            this._doneFirstHalfAnimation.push(reelIndex);
+            this._doneFirstHalfAnimation.push($reelIndex);
             if (this.isReadyToStop())
             {
                 this._sigAllLoopingReelAnimationsStarted.dispatch();
@@ -98,6 +102,9 @@ var AbstractReelAnimation=cc.Class.extend({
     {
         this._doneSecondHalfAnimation.length = 0;
         this._doneFirstHalfAnimation.length = 0;
+
+        this._introReelCompleted=0;
+        this._outroReelCompleted=0;
     },
 
     onPlayIntroBounce:function($reelIndex)
@@ -105,23 +112,60 @@ var AbstractReelAnimation=cc.Class.extend({
         this._sigReelStarting.dispatch();
 
         //hardcode here TOBE optimized;
-        var reelSymbols = this._viewSymbolGrid[$reelIndex];
-        for (var i = 0; i < reelSymbols.length; i++)
+        //var reelSymbols = this._viewSymbolGrid[$reelIndex];
+        //for()
+        /*for (var i = 0; i < reelSymbols.length; i++)
         {
-            //reelSymbols[i].visible = $visibility;
-            //reelSymbols[i].reset();
-
             reelSymbols[i].staticSymbolImage.runAction(cc.sequence(
                     cc.moveBy(.5,cc.p(0,60)),
-                    cc.callFunc(this.onStartReel,this)
+                    cc.callFunc(this.onStartReel,this,i)
                 ))
+        }*/
+        var startDelay = this._reelAnimationStartDelay
+        for(var i=0;i<this._viewSymbolGrid.length;i++)
+        {
+            for(var j=0;j<this._viewSymbolGrid[i].length;j++)
+            {
+                this._viewSymbolGrid[i][j].staticSymbolImage.runAction(cc.sequence(
+                    cc.delayTime(i*startDelay),
+                    cc.moveBy(.5,cc.p(0,60)),
+                    cc.callFunc(this.onStartReel,this,j)
+                ))
+            }
         }
 
+      /*  var nextIndex = $reelIndex + 1;
+        if (nextIndex < this._viewSymbolGrid.length) {
+            var startDelay = this._reelAnimationStartDelay * .01;
+            if(startDelay > 0) // setTimeout with a 0 value seems to add a very minor delay regardless
+            {
+                var callBack=cc.callFunc(this.onPlayIntroBounce,nextIndex);
+
+                //this.runAction(cc.sequence(cc.delayTime(1),callBack));
+                //this.scheduleOnce(callBack,startDelay,1,0);
+            }
+            else
+            {
+                this.onPlayIntroBounce(nextIndex);
+            }
+        }*/
     },
 
-    onStartReel:function (node) {
+    onStopIntroReel:function(node)
+    {
+        cc.log("DELAYYYYY");
+    },
+
+    onStartReel:function (node,id) {
         node.stopAllActions(); //After this stop next action not working, if remove this stop everything is working
         node.visible=false;
+
+        if(++id==4)
+        {
+            this.onIntroBounceComplete(this._introReelCompleted++);
+        }
+
+
     },
 
     stop:function($reel,$anticipationReels)
@@ -134,3 +178,5 @@ var AbstractReelAnimation=cc.Class.extend({
 
     }
 })
+
+

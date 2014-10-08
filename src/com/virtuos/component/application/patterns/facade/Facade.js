@@ -6,6 +6,7 @@ var Facade  = cc.Class.extend({
     model:null,
     view:null,
     multitionKey:"Facade",
+    serviceLocator:null,
 
     ctor:function ($key) {
         if (Facade.instanceMap[$key] != null)
@@ -121,6 +122,34 @@ var Facade  = cc.Class.extend({
 
     },
 
+    //service
+
+    registerService:function(serviceInterfaceOrName,serviceClazz)
+    {
+        this.serviceLocator.registerService(serviceInterfaceOrName, serviceClazz);
+    },
+    registerServiceAsSingleton:function(serviceInterfaceOrName,serviceInstance)
+    {
+        this.serviceLocator.registerServiceAsSingleton(serviceInterfaceOrName, serviceInstance);
+    },
+    registerServiceFactory:function(serviceInterfaceOrName,serviceFactoryMethod)
+    {
+        this.serviceLocator.registerServiceFactory(serviceInterfaceOrName, serviceFactoryMethod);
+    },
+    retrieveService:function(serviceInterfaceOrName)
+    {
+        return this.serviceLocator.retrieveService(serviceInterfaceOrName);
+    },
+    removeService:function(serviceInterfaceOrName)
+    {
+        this.serviceLocator.removeService(serviceInterfaceOrName);
+    },
+    hasService:function(serviceInterfaceOrName)
+    {
+        return this.serviceLocator.hasService(serviceInterfaceOrName);
+    },
+
+
     notifyObservers:function(notification)
     {
         if (this.view != null)
@@ -128,14 +157,10 @@ var Facade  = cc.Class.extend({
             this.view.notifyObservers(notification);
         }
     },
-
     initializeNotifier:function(key)
     {
         this.multitonKey = key;
     }
-
-
-
 });
 
 Facade.instanceMap=[];

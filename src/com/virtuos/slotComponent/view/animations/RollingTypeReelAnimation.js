@@ -5,11 +5,12 @@ var RollingTypeReelAnimation=AbstractReelAnimation.extend({
     _reelCanvas:null,
     _lastFrameTime:0,
     _isPlaying:false,
-    _rollingSpeed:20,
+    _rollingSpeed:100,
     _anticipationRollingSpeed:200,
     _symbolTexturesMap:[],
 
     _columnHeight:0,
+    _resizePos:0,
 
     ctor:function($reelContainer)
     {
@@ -119,16 +120,7 @@ var RollingTypeReelAnimation=AbstractReelAnimation.extend({
             columnLength=this._blurSymbolGrid[i].length;
             //columnHeight=columnLength*125;
             //cc.log("reelAnimationData",i,this._reelsAnimData[i].isAnimating);
-            if(!this._reelsAnimData[i].isAnimating)
-            {
-                this._reelsAnimData[i].showAndStart();
-                /*var introLen=this._blurSymbolGrid[i].length
-                for (var j = 0; j < introLen; j++)
-                {
-                    this._blurSymbolGrid[i][j].visible=false;
-                }*/
-
-            }else {
+            if(this._reelsAnimData[i].isAnimating){
                 for (var j = columnLength-1; j >=0; j--) {
 
                     tempSymbol = this._blurSymbolGrid[i][j]._staticSymbolImage;
@@ -138,7 +130,7 @@ var RollingTypeReelAnimation=AbstractReelAnimation.extend({
                    // } else if (i >= 0) {
                         tempSymbol.y -= speed;
                    // }
-                    if (tempSymbol.y < -400) {
+                    if (tempSymbol.y < this._resizePos) {
                         tempSymbol.y += this._columnHeight;
                     }
                 }
@@ -198,8 +190,10 @@ var RollingTypeReelAnimation=AbstractReelAnimation.extend({
             this._reelsAnimData.push(animData);
 
             this._blurSymbolGrid.push(temGrid);
-
+            //this._columHeightsMap.push(this._blurSymbolGrid[i].length*125)
         }
+
         this._columnHeight=this._blurSymbolGrid[0].length*125;
+        this._resizePos=0-this._columnHeight/2;
     }
 })

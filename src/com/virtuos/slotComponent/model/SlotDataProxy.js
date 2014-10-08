@@ -9,6 +9,8 @@ var SlotDataProxy  = Proxy.extend({
     _freeSpinRemaining:0,
     _isAutoSpin:false,
 
+    _slotRequest:null,
+
     ctor:function(name)
     {
         this._super(SlotDataProxy.NAME);
@@ -16,6 +18,11 @@ var SlotDataProxy  = Proxy.extend({
         this._coinSize = 0;
 
         cc.defineGetterSetter(this,"isSpinFree",this.getIsSpinFree,this.setIsSpinFree);
+    },
+
+    onRegister:function()
+    {
+
     },
 
     getIsSpinFree:function()

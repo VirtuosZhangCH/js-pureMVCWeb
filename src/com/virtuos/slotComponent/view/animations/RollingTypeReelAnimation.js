@@ -5,7 +5,7 @@ var RollingTypeReelAnimation=AbstractReelAnimation.extend({
     _reelCanvas:null,
     _lastFrameTime:0,
     _isPlaying:false,
-    _rollingSpeed:100,
+    _rollingSpeed:80,
     _anticipationRollingSpeed:200,
     _symbolTexturesMap:[],
 
@@ -130,7 +130,7 @@ var RollingTypeReelAnimation=AbstractReelAnimation.extend({
                    // } else if (i >= 0) {
                         tempSymbol.y -= speed;
                    // }
-                    if (tempSymbol.y < this._resizePos) {
+                    if (tempSymbol.y < -400) {
                         tempSymbol.y += this._columnHeight;
                     }
                 }

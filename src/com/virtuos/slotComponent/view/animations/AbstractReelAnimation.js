@@ -32,7 +32,7 @@ var AbstractReelAnimation=cc.Class.extend({
 
     _startBounceBackDistance:50,
     _endBounceBackDistance:50,
-    _startBounceBackDistance:1,
+    _startBounceBackDistance:.5,
     _endBounceBackDuration:1,
 
     ctor:function()
@@ -161,7 +161,7 @@ var AbstractReelAnimation=cc.Class.extend({
         node.stopAllActions(); //After this stop next action not working, if remove this stop everything is working
         node.visible=false;
 
-        if(++id==4)
+        if(id==0)
         {
             this.onIntroBounceComplete(this._introReelCompleted++);
         }

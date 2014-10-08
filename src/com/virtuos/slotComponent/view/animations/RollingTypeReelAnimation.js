@@ -5,12 +5,14 @@ var RollingTypeReelAnimation=AbstractReelAnimation.extend({
     _reelCanvas:null,
     _lastFrameTime:0,
     _isPlaying:false,
-    _rollingSpeed:80,
-    _anticipationRollingSpeed:200,
+    _rollingSpeed:90,
+    _anticipationRollingSpeed:160,
     _symbolTexturesMap:[],
 
     _columnHeight:0,
     _resizePos:0,
+
+    testPoint:0,
 
     ctor:function($reelContainer)
     {
@@ -107,31 +109,28 @@ var RollingTypeReelAnimation=AbstractReelAnimation.extend({
     updateReelCanvas:function(ticksMs)
     {
         var speed=this._rollingSpeed;
-        var moveDelta=speed * ticksMs / 1000;
         var tempSymbol;
        // cc.log("ticksMs::",ticksMs,"moveDelta::",moveDelta);
-        var gridLength=this._reelsAnimData.length;
+        //var gridLength=this._reelsAnimData.length;
         var columnLength;
         //var columnHeight
-        var lastSybY=-1;
+        //var lastSybY=-1;
 
-        for(var i=0;i<gridLength;i++)
+        for(var i=0;i<5;i++)
         {
             columnLength=this._blurSymbolGrid[i].length;
             //columnHeight=columnLength*125;
-            //cc.log("reelAnimationData",i,this._reelsAnimData[i].isAnimating);
             if(this._reelsAnimData[i].isAnimating){
                 for (var j = columnLength-1; j >=0; j--) {
 
-                    tempSymbol = this._blurSymbolGrid[i][j]._staticSymbolImage;
+                    tempSymbol = this._blurSymbolGrid[i][j].staticSymbolImage;
 
-                   // if (i == 2) {
-                       // tempSymbol.y -= 360;
-                   // } else if (i >= 0) {
-                        tempSymbol.y -= speed;
-                   // }
-                    if (tempSymbol.y < -400) {
+                    //TODO optimize
+                    tempSymbol.y -= speed;
+                    if (tempSymbol.y < this._resizePos)
+                    {
                         tempSymbol.y += this._columnHeight;
+                        //cc.log(this.testPoint++)
                     }
                 }
             }
@@ -194,6 +193,6 @@ var RollingTypeReelAnimation=AbstractReelAnimation.extend({
         }
 
         this._columnHeight=this._blurSymbolGrid[0].length*125;
-        this._resizePos=-400//Math.floor(0-this._columnHeight/2);
+        this._resizePos=Math.floor(0-this._columnHeight/2);
     }
 })

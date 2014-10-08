@@ -194,6 +194,6 @@ var RollingTypeReelAnimation=AbstractReelAnimation.extend({
         }
 
         this._columnHeight=this._blurSymbolGrid[0].length*125;
-        this._resizePos=0-this._columnHeight/2;
+        this._resizePos=-400//Math.floor(0-this._columnHeight/2);
     }
 })

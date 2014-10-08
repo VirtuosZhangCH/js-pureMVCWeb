@@ -23,8 +23,6 @@ var testSymbolLayer=cc.Sprite.extend({
 
         //clipper
         this.createChildren();
-
-
     },
 
     createChildren:function()

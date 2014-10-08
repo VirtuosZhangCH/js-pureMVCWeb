@@ -20,6 +20,7 @@ var Facade  = cc.Class.extend({
 
     initializeFacade:function()
     {
+        this.initializeServiceLocator();
         this.initializeModel();
         this.initializeController();
         this.initializeView();
@@ -51,6 +52,15 @@ var Facade  = cc.Class.extend({
         }
         this.view = View.getInstance(this.multitonKey);
         return;
+    },
+
+    initializeServiceLocator:function()
+    {
+        if (this.serviceLocator != null)
+        {
+            return;
+        }
+        this.serviceLocator = ServiceLocator.getInstance(this.multitonKey);
     },
 
     registerCommand:function(notificationName,commandClassRef)

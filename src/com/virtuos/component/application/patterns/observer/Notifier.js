@@ -6,7 +6,7 @@ var Notifier  = cc.Class.extend({
     multitonKey:null,
     ctor:function()
     {
-
+        cc.defineGetterSetter(this,"facade",this.getFacade);
     },
     sendNotification:function($notificationName,$body, $type)
     {
@@ -22,6 +22,15 @@ var Notifier  = cc.Class.extend({
     initializeNotifier:function ($key)
     {
         this.multitonKey = $key;
+    },
+
+    getFacade:function()
+    {
+        if (this.multitonKey == null)
+        {
+            throw Error("multitonKey for this Notifier not yet initialized!");
+        }
+        return Facade.getInstance(this.multitonKey);
     }
 
 })

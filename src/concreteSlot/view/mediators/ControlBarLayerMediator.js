@@ -10,7 +10,7 @@ var ControlBarLayerMediator=AbstractSlotComponentMediator.extend({
         this._super(name,viewComponent);
         this._view=viewComponent;
 
-        cc.log("MediatorName:",this.mediatorName);
+        //cc.log("MediatorName:",this.mediatorName);
         //cc.defineGetterSetter(this,"mediatorName",this.getMediatorName);
     },
 

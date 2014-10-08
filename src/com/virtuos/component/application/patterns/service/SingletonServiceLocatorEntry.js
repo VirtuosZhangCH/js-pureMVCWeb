@@ -1,7 +1,7 @@
 /**
  * Created by zhangchi on 2014/10/8.
  */
-var NewInstanceServiceLocatorEntry  = cc.Class.extend({
+var SingletonServiceLocatorEntry  = cc.Class.extend({
     _serviceInstance:null,
     _multitonKey:"",
     _serviceInitialized:false,

@@ -3,17 +3,17 @@
  */
 var ServiceLocator  = cc.Class.extend({
     multitonKey:"",
-    _serivceRegistry:[],
+    _serivceRegistry:{},
 
     ctor:function($key)
     {
-        this._serivceRegistry = new Dictionary();
-        if (this.instanceMap[$key] != null)
+        this._serivceRegistry ={}
+        if (ServiceLocator.instanceMap[$key] != null)
         {
             throw Error("ServiceLocatorRegistry instance for this Multiton key already constructed!");
         }
         this.multitonKey = $key;
-        this.instanceMap[this.multitonKey] = this;
+        ServiceLocator.instanceMap[this.multitonKey] = this;
     },
 
     registerService:function($serviceInterfaceOrName,$serviceClazz)
@@ -49,7 +49,19 @@ var ServiceLocator  = cc.Class.extend({
 
     registerServiceFactory:function(serviceInterfaceOrName,serviceFactoryMethod)
     {
-        //TODO
+        var entry;
+        var serviceInterfaceOrName = serviceInterfaceOrName;
+        var serviceFactoryMethod = serviceFactoryMethod;
+        try
+        {
+            entry = new FactoryMethodServiceLocatorEntry(serviceFactoryMethod, this.multitonKey);
+            entry.retrieveService();
+            this._serivceRegistry[serviceInterfaceOrName] = entry;
+        }
+        catch (e)
+        {
+            throw new Error(serviceInterfaceOrName, e.message);
+        }
     },
 
     retrieveService:function(serviceInterfaceOrName)

@@ -9,7 +9,7 @@ var SlotDataProxy  = Proxy.extend({
     _freeSpinRemaining:0,
     _isAutoSpin:false,
 
-    _slotRequest:null,
+    slotRequestService:null,
 
     ctor:function(name)
     {
@@ -22,7 +22,10 @@ var SlotDataProxy  = Proxy.extend({
 
     onRegister:function()
     {
-
+        this.slotRequestService = this.facade.retrieveService("SlotRequestService");
+        //this.slotRequestService.sigHandShakeResponse.add(handleHandshakeResponce);
+        //this.slotRequestService.sigSpinResponse.add(handleSpinResponse);
+        //this.slotRequestService.sigAppReset.add(handleGameReset);
     },
 
     getIsSpinFree:function()

@@ -9,11 +9,16 @@ var SlotFacade  = Facade.extend({
     *@mainViewMediator Class
     *
     * */
-    startup:function(definitionOfSlotDataProxy,definitionOfSlotStatesProxy,mainView,mainViewMediator)
+    startup:function(definitionOfSlotDataProxy,definitionOfSlotStatesProxy,definitionOfSlotRequestService,mainView,mainViewMediator)
     {
         //var slotDataProxy=new SlotDataProxy()
         var slotDataProxy = new definitionOfSlotDataProxy();
         var slotStatesProxy = new definitionOfSlotStatesProxy();
+        var slotRequestService = new definitionOfSlotRequestService();
+        if(!slotRequestService){
+            throw new Error("definationOfSlotRequestService must be an implementation of ISlotRequestService");
+            return;
+        }
         if(!slotDataProxy){
             throw new Error("definitionOfSlotDataProxy must be a descendent of SlotDataProxy");
             return;
@@ -22,6 +27,7 @@ var SlotFacade  = Facade.extend({
             throw new Error("definationOfSlotStatesProxy must be a descendent of SlotStatesProxy");
             return;
         }
+        this.registerServiceAsSingleton("SlotRequestService",slotRequestService);
         this.registerProxy(slotDataProxy);
         this.registerProxy(slotStatesProxy);
         this.registerMediator(new mainViewMediator(mainView));

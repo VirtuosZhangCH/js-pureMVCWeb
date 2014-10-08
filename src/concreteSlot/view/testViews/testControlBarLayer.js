@@ -94,6 +94,9 @@ var testControlBarLayer=cc.Sprite.extend({
 
     onCallBack:function()
     {
+        //test
+
+        cc.eventManager.dispatchCustomEvent(SpinResponseEvent.SPIN_RESPONSE,"KKKOOO");
         this.sigOnClick.dispatch();
     },
 

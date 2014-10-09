@@ -23,7 +23,7 @@ var AbstractReelAnimation=cc.Class.extend({
 
     _reelAnimationStartDelay:1,
     _reelAnimationEndBounceDistance:20,
-
+    _reelAnimationCompleteDelay:1,
     _doneFirstHalfAnimation:[],
     _doneSecondHalfAnimation:[],
 
@@ -35,17 +35,53 @@ var AbstractReelAnimation=cc.Class.extend({
     _startBounceBackDistance:.5,
     _endBounceBackDuration:1,
 
+    _isUserForcedStop:false,
+
     ctor:function()
     {
 
     },
     //jeff
 
-
     //component
     isReadyToStop:function()
     {
         return this._doneFirstHalfAnimation.length >= this._viewSymbolGrid.length;
+    },
+
+    playOutroBounce:function($anticipationReels)
+    {
+        this.resetAnimHalves();
+        this._anticipationReels=$anticipationReels;
+        this.onPlayOutroBounce(0);
+    },
+
+    onPlayOutroBounce:function($reelIndex)
+    {
+
+    },
+
+    onPlayOutroBounceComplete:function($reelIndex)
+    {
+        var allComplete  = ($reelIndex >=this._viewSymbolGrid.length - 1);
+        //so the -1 indicate this is the last one,then we don't have to expose the number reels to outside.
+        if(allComplete)
+        {
+            if(this._reelAnimationCompleteDelay > 0)
+            {
+               /* var id:uint = setTimeout(function():void{
+                _sigSpinComplete.dispatch(-1);
+                clearTimeout(id);
+                 },_reelAnimationCompleteDelay * 1000);*/
+            }
+            else
+            {
+                this._sigSpinComplete.dispatch(-1);
+            }
+        }else
+        {
+            this._sigSpinComplete.dispatch($reelIndex);
+        }
     },
 
     onIntroBounceComplete:function($reelIndex)
@@ -61,7 +97,6 @@ var AbstractReelAnimation=cc.Class.extend({
         if(this._doneFirstHalfAnimation.length){
             this._sigLoopReelAnimationsStarted.dispatch();
         }
-
         if (this._doneFirstHalfAnimation.indexOf($reelIndex) == -1)
         {
             this._doneFirstHalfAnimation.push($reelIndex);
@@ -128,13 +163,15 @@ var AbstractReelAnimation=cc.Class.extend({
                 ))
         }*/
         var startDelay = this._reelAnimationStartDelay
+        var delayTime
         for(var i=0;i<this._viewSymbolGrid.length;i++)
         {
+            delayTime=i*startDelay
             for(var j=0;j<this._viewSymbolGrid[i].length;j++)
             {
                 var move1 = cc.moveBy(.25, cc.p(0, 60));
                 this._viewSymbolGrid[i][j].staticSymbolImage.runAction(cc.sequence(
-                    cc.delayTime(i*startDelay),
+                    cc.delayTime(delayTime),
                     move1,move1.reverse(),
                     cc.callFunc(this.onStartReel,this,j)
                 ))
@@ -165,11 +202,23 @@ var AbstractReelAnimation=cc.Class.extend({
         {
             this.onIntroBounceComplete(this._introReelCompleted++);
         }
-
-
     },
 
-    stop:function($reel,$anticipationReels)
+    stop:function($reel,$anticipationReels,$isUserStop)
+    {
+        $anticipationReels=$anticipationReels||null;
+        $isUserStop=$isUserStop||false;
+        this._isUserForcedStop = $isUserStop;
+
+        if (this.isReadyToStop() == false)
+        {
+            //this.startPolling($reel,$anticipationReels);//the animations are not ready to stop yet, then we do it later with a timer counting.
+            return;
+        }
+        this.playStopAnimation($reel,$anticipationReels);
+    },
+
+    playStopAnimation:function($reel,$anticipationReels)
     {
 
     },

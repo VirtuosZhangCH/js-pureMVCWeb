@@ -4,6 +4,13 @@
 var testSymbolLayer=cc.Sprite.extend({
 
     sigClick:new Signal(),
+
+    sigReelStarting:new Signal(),
+    sigReelStopping:new Signal(),
+    sigAllLoopingReelAnimationsStarted:new Signal(),
+    sigAllLoopingReelAnimationsStarted:new Signal(),
+    sigReelStoppingHitBottom:new Signal(),
+    _sigReelSpinComplete:new Signal(),
     _reelAnimationsContainer:null,
     _symbolsContainer:null,
 
@@ -12,8 +19,9 @@ var testSymbolLayer=cc.Sprite.extend({
     _symbolGrid : [],
     _viewSymbolGrid : [],
     _animationController :null,// getStaticSymbolAnimationController();
-
+    _showResultCoolDownTimeOutID:0,
     //own component
+
 
     _clipper:null,
     _clipRectangle:null,
@@ -23,6 +31,24 @@ var testSymbolLayer=cc.Sprite.extend({
 
         //clipper
         this.createChildren();
+
+        //getter setter
+        //cc.defineGetterSetter(this,"sigReelSpinComplete",this.getSigReelSpinComplete);
+        //cc.defineGetterSetter(this,"sigLoopReelAnimationsStarted",this.getSigLoopReelAnimationsStarted.bind(this));
+        cc.defineGetterSetter(this,"sigAllLoopingReelAnimationsStarted",this.getSigAllLoopingReelAnimationsStarted.bind(this));
+        //cc.defineGetterSetter(this,"sigReelStoppingHitBottom",this.getSigReelStoppingHitBottom);
+        //cc.defineGetterSetter(this,"sigReelStarting",this.getSigReelStarting);
+        cc.defineGetterSetter(this,"sigReelStopping",this.getSigReelStopping.bind(this));
+    },
+
+    getSigReelStopping:function()
+    {
+        return  this._animationController._sigReelStopping;
+    },
+
+    getSigAllLoopingReelAnimationsStarted:function()
+    {
+        return  this._animationController._sigAllLoopingReelAnimationsStarted;
     },
 
     createChildren:function()
@@ -115,7 +141,6 @@ var testSymbolLayer=cc.Sprite.extend({
             var frame = cc.spriteFrameCache.getSpriteFrame(str);
             this.symbolFrames.push(frame);
         }
-
         var tempImageArr=[];
         var symbol
         var symbolImage
@@ -134,11 +159,9 @@ var testSymbolLayer=cc.Sprite.extend({
                 //TODO optimize here
                 symbolImage.initX=symbol.x=(i-2)*165-4;
                 symbolImage.initY=symbol.y=(j-2)*125-24;
-
                 //just a test
                 symbolImage.setSource(symbolOrder[i][j]);
 
-                //tempArr.push(symbol);
                 tempImageArr.push(symbolImage);
                 this._symbolsContainer.addChild(symbol);
 
@@ -147,6 +170,18 @@ var testSymbolLayer=cc.Sprite.extend({
 
             this._viewSymbolGrid.push(tempImageArr);
         }
+    },
 
+    onUpdateResult:function(result)
+    {
+        //var testFunc=this.test(result);
+        this._showResultCoolDownTimeOutID=setTimeout(this.test,1000,result)
+    },
+
+    test:function(tt)
+    {
+        clearTimeout(this._showResultCoolDownTimeOutID);
+        cc.log("SETTTTTTTT"+tt);
     }
+
 })

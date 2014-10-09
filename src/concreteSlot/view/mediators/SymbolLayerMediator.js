@@ -37,6 +37,10 @@ var SymbolLayerMediator=AbstractSlotComponentMediator.extend({
             case SlotGameState.PLAYING_INTRO_REEL_ANIMATIONS:
                 point._view.playReelAnimation();
                 break;
+            case SlotGameState.PLAYING_LOOP_REEL_ANIMATIONS:
+                //just a test TO GET FAKE DATA
+                cc.eventManager.dispatchCustomEvent(SpinResponseEvent.SPIN_RESPONSE,"KKKOOO");
+                break;
             case SlotGameState.PLAYING_OUTRO_REEL_ANIMATIONS:
 
                 break;

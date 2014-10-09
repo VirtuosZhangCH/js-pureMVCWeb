@@ -96,7 +96,7 @@ var testControlBarLayer=cc.Sprite.extend({
     {
         //test
 
-        cc.eventManager.dispatchCustomEvent(SpinResponseEvent.SPIN_RESPONSE,"KKKOOO");
+        //cc.eventManager.dispatchCustomEvent(SpinResponseEvent.SPIN_RESPONSE,"KKKOOO");
         this.sigOnClick.dispatch();
     },
 

@@ -30,6 +30,8 @@
         "src/com/virtuos/component/core/Model.js",
         "src/com/virtuos/component/core/View.js",
 
+        "src/fakeData.js",
+
         "src/concreteSlot/core/events/response/SpinResponseEvent.js",
         "src/com/virtuos/slotComponent/model/slotRequestService.js",
         "src/com/virtuos/component/core/ServiceLocator.js",

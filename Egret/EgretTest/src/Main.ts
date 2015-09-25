@@ -46,7 +46,7 @@ class Main extends egret.DisplayObjectContainer {
         egret.Injector.mapClass("egret.gui.IAssetAdapter", AssetAdapter);
         // load skin theme configuration file, you can manually modify the file. And replace the default skin.
         //加载皮肤主题配置文件,可以手动修改这个文件。替换默认皮肤。
-        egret.gui.Theme.load("resource/theme.thm");
+        //egret.gui.Theme.load("resource/theme.thm");
         //Config loading process interface
         //设置加载进度界面
         this.loadingView = new LoadingUI();

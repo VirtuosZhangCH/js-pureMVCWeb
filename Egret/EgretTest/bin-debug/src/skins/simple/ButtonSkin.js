@@ -8,16 +8,16 @@ var skins;
                 _super.call(this);
                 this.__s = egret.gui.setProperties;
                 this.__s(this, ["minHeight", "minWidth"], [60, 140]);
-                this.elementsContent = [this.__4_i(), this.__10_i()];
+                this.elementsContent = [this.__4_i(), this.__8_i()];
                 this.states = [
                     new egret.gui.State("up", []),
                     new egret.gui.State("down", [
                         new egret.gui.SetProperty("__4", "source", "button_down_png"),
-                        new egret.gui.SetProperty("labelDisplay", "textColor", 0x222222)
+                        new egret.gui.SetProperty("labelDisplay2", "textColor", 0x222222)
                     ]),
                     new egret.gui.State("disabled", [
                         new egret.gui.SetProperty("__4", "source", "button_disabled_png"),
-                        new egret.gui.SetProperty("labelDisplay", "textColor", 0xcccccc)
+                        new egret.gui.SetProperty("labelDisplay2", "textColor", 0xcccccc)
                     ])
                 ];
             }
@@ -29,12 +29,6 @@ var skins;
                 enumerable: true,
                 configurable: true
             });
-            __egretProto__.__4_i = function () {
-                var t = new egret.gui.UIAsset();
-                this.__4 = t;
-                this.__s(t, ["percentHeight", "source", "percentWidth"], [100, "button_normal_png", 100]);
-                return t;
-            };
             __egretProto__.__5_i = function () {
                 var t = new egret.gui.HorizontalLayout();
                 this.__s(t, ["gap", "horizontalAlign", "verticalAlign"], [0, "center", "middle"]);
@@ -46,20 +40,18 @@ var skins;
                 return t;
             };
             __egretProto__.__7_i = function () {
-                var t = new egret.gui.UIAsset();
-                this.__s(t, ["source", "x"], ["progressbar_fill_png", 0]);
-                return t;
-            };
-            __egretProto__.__8_i = function () {
-                var t = new egret.gui.Label();
-                t.x = 0;
-                return t;
-            };
-            __egretProto__.__9_i = function () {
                 var t = new egret.gui.Group();
                 t.left = 10;
                 t.layout = this.__6_i();
-                t.elementsContent = [this.__7_i(), this.__8_i(), this.labelDisplay_i()];
+                t.elementsContent = [this.labelDisplay_i(), this.labelDisplay2_i()];
+                return t;
+            };
+            __egretProto__.__8_i = function () {
+                var t = new egret.gui.Group();
+                t.setStyle("textColor", 0x981818);
+                this.__s(t, ["bottom", "left", "right", "top"], [10, 10, 10, 10]);
+                t.layout = this.__5_i();
+                t.elementsContent = [this.icon_i(), this.__7_i()];
                 return t;
             };
             __egretProto__.icon_i = function () {
@@ -68,21 +60,25 @@ var skins;
                 this.__s(t, ["source", "x"], ["closebtn_disabled_png", 1]);
                 return t;
             };
+            __egretProto__.labelDisplay2_i = function () {
+                var t = new egret.gui.Label();
+                this.labelDisplay2 = t;
+                this.__s(t, ["fontFamily", "size", "text", "textColor", "x"], ["Tahoma", 20, "wwwww", 0xff1111, 0]);
+                return t;
+            };
             __egretProto__.labelDisplay_i = function () {
                 var t = new egret.gui.Label();
                 this.labelDisplay = t;
-                this.__s(t, ["fontFamily", "size", "textColor", "x"], ["Tahoma", 10, 0xff1111, 0]);
+                this.__s(t, ["size", "text"], [20, "wei"]);
                 return t;
             };
-            __egretProto__.__10_i = function () {
-                var t = new egret.gui.Group();
-                t.setStyle("textColor", 0x981818);
-                this.__s(t, ["bottom", "left", "right", "top"], [10, 10, 10, 10]);
-                t.layout = this.__5_i();
-                t.elementsContent = [this.icon_i(), this.__9_i()];
+            __egretProto__.__4_i = function () {
+                var t = new egret.gui.UIAsset();
+                this.__4 = t;
+                this.__s(t, ["percentHeight", "source", "percentWidth"], [100, "button_normal_png", 100]);
                 return t;
             };
-            ButtonSkin._skinParts = ["icon", "labelDisplay"];
+            ButtonSkin._skinParts = ["icon", "labelDisplay", "labelDisplay2"];
             return ButtonSkin;
         })(egret.gui.Skin);
         simple.ButtonSkin = ButtonSkin;

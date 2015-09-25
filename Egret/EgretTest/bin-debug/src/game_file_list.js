@@ -1,6 +1,6 @@
 var game_file_list = [
 	"scene/MyButton.js",
-	"skins/simple/ButtonSkin.js",
+	"scene/MyButtonSkin.js",
 	"scene/GroupDemo.js",
 	"skins/simple/HScrollBarThumbSkin.js",
 	"skins/simple/TreeDisclosureButtonSkin.js",
@@ -8,6 +8,7 @@ var game_file_list = [
 	"AssetAdapter.js",
 	"LoadingUI.js",
 	"scene/Showcase.js",
+	"skins/simple/ButtonSkin.js",
 	"skins/simple/CloseButtonSkin.js",
 	"skins/simple/DropDownListItemRendererSkin.js",
 	"skins/simple/DropDownListOpenButtonSkin.js",

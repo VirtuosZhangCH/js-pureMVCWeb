@@ -18,9 +18,9 @@
 			<e:layout>
 				<e:VerticalLayout gap="0" verticalAlign="middle" horizontalAlign="center"/>
 			</e:layout>
-			<e:UIAsset x="0" source="progressbar_fill_png"/>
-			<e:Label x="0" />
-			<e:Label id="labelDisplay" size="10" 
+			
+			<e:Label id="labelDisplay" size="20" text="wei"/>
+			<e:Label id="labelDisplay2" size="20" text="wwwww"
 			         x="0" fontFamily="Tahoma" textColor="0xff1111"
 			         textColor.down="0x222222" textColor.disabled="0xcccccc"/>		
 		</e:Group>

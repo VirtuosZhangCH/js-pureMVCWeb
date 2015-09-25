@@ -11,16 +11,18 @@ var GroupDemo = (function (_super) {
     var __egretProto__ = GroupDemo.prototype;
     __egretProto__.createChildren = function () {
         _super.prototype.createChildren.call(this);
-        var btn = new MyButton();
-        btn.label = "未解锁";
-        //btn.Label2.text = "222";
-        btn.skinName = "skins.simple.ButtonSkin";
+        this.btn = new MyButton();
+        this.btn.label = "未解锁";
+        this.btn.label2 = "222";
+        this.btn.skinName = MyButtonSkin;
         var ass = new egret.gui.UIAsset("bgImage");
         this.addElement(ass);
-        btn.top = 20;
-        this.addElement(btn);
-        btn.addEventListener(egret.TouchEvent.TOUCH_TAP, onButtonClick, this);
+        this.btn.top = 20;
+        this.addElement(this.btn);
+        this.btn.addEventListener(egret.TouchEvent.TOUCH_TAP, onButtonClick, this);
         function onButtonClick(e) {
+            this.btn.lable2 = "sssss";
+            //this.btn.partAdded("lableDisplay2",this.btn.label2);
             console.log("ssss" + this.id);
         }
     };
